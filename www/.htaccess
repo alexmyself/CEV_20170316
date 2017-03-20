@@ -67,3 +67,7 @@ RewriteCond %{REQUEST_URI} !^/cevam/
 RewriteCond %{REQUEST_URI} !^/current/
 RewriteCond %{REQUEST_URI} !^/next/
 RewriteRule ^.*$ /current/	[L,R=301]
+
+	#Redirect cev index to current index
+RewriteCond %{REQUEST_URI} ^/cev/index.htm
+RewriteRule ^.*$ /current/	[L,R=301]
