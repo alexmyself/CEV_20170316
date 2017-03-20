@@ -1,0 +1,8 @@
+<ul>
+<li>Boîte de vitesse robotisée</li>
+<li>Suspensions arrières pneumatiques</li>
+<li>Plateau basculant coulissant renforcé avec flyer support signalisation</li>
+<li>Rampe lumineuse LED</li>
+<li>Déplacement latéral hydraulique du treuil</li>
+<li>Combiné panier flèche</li>
+</ul>

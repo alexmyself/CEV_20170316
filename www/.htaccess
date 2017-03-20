@@ -1,0 +1,69 @@
+Options -Indexes
+
+RewriteEngine On
+Options +FollowSymlinks
+#Doc
+#!!! Regexp cannot expand variables !!!
+#!!! Each internal redirection add REDIRECT_ preffix to vars: ${ENV:varName} to ${ENV:REDIRECT_varName} to ${ENV:REDIRECT_REDIRECT_varName} to ....Each matching rule is an internal redirection !!!
+#Set a variable whatever the asked url is
+#RewriteRule ^.* - [E=nextDir:V20161018]
+#RewriteRule ^.* - [E=nextDir:V20161018]
+#^(blabla)(...)$ in a rewriteCond became accessible via %1, %2,...
+#^(blabla)(...)$ in a rewriteRule became accessible via $1, $2,...
+#Domain name like: 	klik-klik.fr : 			%{HTTP_HOST}
+#Path asked like: 	/image : 				%{REQUEST_URI} (this always starts by a /)
+#Args like: 		..?argName=argValue : 	%{QUERY_STRING}
+#/Doc
+
+
+#Redirect some existing google result links.
+RewriteCond %{ENV:REDIRECT_STATUS} ^[\s/]*$
+RewriteCond %{REQUEST_URI} ^/V
+RewriteRule ^ http://www.cev-treuil.com/current/Index.php?%{QUERY_STRING} [L,R=301]
+
+
+#Remove, thanks ie, https. Add https //
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#If ssh certificate is dead, comment two previous and uncommment two followings lines.
+RewriteCond %{HTTPS} =on
+RewriteRule ^ http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#Add www
+RewriteCond %{HTTP_HOST} ^cev-treuil\....?$ [NC]
+RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+
+##############################################################
+	#Current dir
+RewriteRule ^ - [E=currentDir:V20161228]
+	#Set url if /current(/) is asked and if there has been no previous internal redirection
+RewriteCond %{REQUEST_URI} ^/current.?$
+RewriteRule ^ /current/Index.php\?%{QUERY_STRING} [L,R]
+
+	#Set path for next url ressources
+RewriteCond %{REQUEST_URI} ^/current/.+\....?
+RewriteRule current(.*) %{ENV:currentDir}$1 [L]
+##############################################################
+
+
+##############################################################
+	#Next dir
+RewriteRule ^ - [E=nextDir:V20170208]
+	#Set url if /next(/) is asked and if there has been no previous internal redirection
+RewriteCond %{REQUEST_URI} ^/next.?$
+RewriteRule ^ /next/Index.php\?%{QUERY_STRING} [L,R]
+
+	#Set path for next url ressources
+RewriteCond %{REQUEST_URI} ^/next/.+\....?
+RewriteRule next(.*) %{ENV:nextDir}$1 [L]
+##############################################################
+
+
+	#Redirect everything non expected
+RewriteCond %{REQUEST_URI} !^/cev/
+RewriteCond %{REQUEST_URI} !^/cevam/
+RewriteCond %{REQUEST_URI} !^/current/
+RewriteCond %{REQUEST_URI} !^/next/
+RewriteRule ^.*$ /current/	[L,R=301]

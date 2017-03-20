@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"package.js",
+"lineCount":2,
+"mappings":"A;IAAIA,QAAW,QAAA,4BAGPC,QAAAA,CAASC,CAATD,CAAmBE,CAAnBF,QACGG,YAAA,CAAaF,CAAb,CADHD,CAHO,sBAAA;",
+"sources":["package.js.uncompressed.js"],
+"names":["profile","amd","filename","mid","test"]
+}

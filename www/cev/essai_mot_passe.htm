@@ -1,0 +1,328 @@
+<html>
+<head>
+
+<TITLE>Exemple de Drag And Drop</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var isNav, isIE
+var offsetX, offsetY
+var selectedObj 
+ 
+var posbarre_x=50
+var posbarre_y=150
+
+var poscurseur_x=posbarre_x+20
+ 
+var scalaleft = posbarre_x+20
+var scalaright = posbarre_x+260
+
+var scalawidth =scalaright-scalaleft
+
+var poscurseur_y = posbarre_y
+
+if (parseInt(navigator.appVersion) >= 4) {
+if (navigator.appName == "Netscape") {
+isNav = true
+} else {
+isIE = true
+}
+}
+ 
+function setZIndex(obj, zOrder) {
+obj.zIndex = zOrder
+}
+
+function shiftTo(obj, x, y) {
+// Traitement du depassement de la zone de defilement
+if (x<=scalaleft) {x=scalaleft}
+if (x>=scalaright) {x=scalaright}
+ 
+if (isNav)
+{
+// Code de defilement dedie a Navigator
+obj.moveTo(x,poscurseur_y)
+document.layers["contenu"].left = 2*(posbarre_x)-x+20;
+document.layers["contenu"].clip.right = 293 +x-posbarre_x-20;
+document.layers["contenu"].clip.left =-posbarre_x+x-20;
+document.close()
+}
+else
+{ 
+// Code de defilement dedie a Internet Explorer
+obj.pixelLeft = x;
+obj.pixelTop = poscurseur_y
+document.all["contenu"].style.left = 2*(posbarre_x)-x+20;
+
+// Ordre de Rect : top right bottom left
+ev = 'rect(0px '+eval(293+x-posbarre_x-20)+'px 100px' +eval(posbarre_x-x+19.9)+'px'+')';
+document.all["contenu"].style.clip = ev;
+} 
+}
+ 
+function setSelectedElem(evt) {
+if (isNav) {
+var testObj
+var clickX = evt.pageX
+var clickY = evt.pageY
+for (var i = document.layers.length - 1; i >= 0; i--) {
+testObj = document.layers[i]
+if ((clickX > testObj.left) && 
+(clickX < testObj.left + testObj.clip.width) && 
+(clickY > testObj.top) && 
+(clickY < testObj.top + testObj.clip.height) && (testObj.name=="curseur")) {
+selectedObj = testObj
+setZIndex(selectedObj, 100)
+return
+}
+}
+} else {
+var imgObj = window.event.srcElement
+if (imgObj.parentElement.id.indexOf("curseur") != -1) {
+selectedObj = imgObj.parentElement.style
+setZIndex(selectedObj,100)
+return
+}
+}
+selectedObj = null
+return
+}
+
+function dragIt(evt) {
+if (selectedObj) {
+if (isNav) {
+shiftTo(selectedObj, (evt.pageX - offsetX), (evt.pageY - offsetY))
+} else {
+shiftTo(selectedObj, (window.event.clientX - offsetX), (window.event.clientY - offsetY))
+return false
+}
+}
+}
+
+function engage(evt) {
+setSelectedElem(evt)
+if (selectedObj) {
+if (isNav) {
+offsetX = evt.pageX - selectedObj.left
+offsetY = evt.pageY - selectedObj.top
+} else {
+offsetX = window.event.offsetX
+offsetY = window.event.offsetY
+}
+}
+return false
+}
+
+function release(evt) {
+if (selectedObj) {
+setZIndex(selectedObj, 0)
+selectedObj = null
+}
+}
+
+function setNavEventCapture() {
+if (isNav) {
+document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP)
+}
+}
+
+function init() {
+if (isNav) {
+document.barre.left=posbarre_x
+document.barre.top=posbarre_y
+
+document.curseur.left=poscurseur_x
+document.curseur.top=poscurseur_y
+
+setNavEventCapture()
+} 
+if (isIE) {
+document.all.barre.style.posLeft=posbarre_x
+document.all.barre.style.posTop=posbarre_y
+
+document.all.curseur.style.posLeft=poscurseur_x
+document.all.curseur.style.posTop=poscurseur_y
+
+document.onmousedown = engage
+document.onmousemove = dragIt
+document.onmouseup = release
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_jumpMenuGo(selName,targ,restore){ //v3.0
+  var selObj = MM_findObj(selName); if (selObj) MM_jumpMenu(targ,selObj,restore);
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_jumpMenuGo(selName,targ,restore){ //v3.0
+  var selObj = MM_findObj(selName); if (selObj) MM_jumpMenu(targ,selObj,restore);
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_jumpMenuGo(selName,targ,restore){ //v3.0
+  var selObj = MM_findObj(selName); if (selObj) MM_jumpMenu(targ,selObj,restore);
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</SCRIPT>
+ 
+<style type="text/css">
+#barre {position:absolute;left:-2000;top:50;}
+#curseur {position:absolute;left:-2000;top:50;}
+
+.texte
+{
+font-size: 8pt;
+color: white;
+font-family: verdana,arial
+}
+ 
+</STYLE>
+</HEAD> 
+ 
+<BODY bgcolor="#FFFFFF" onLoad="init();">
+<div id="Layer1" style="position:absolute; width:200px; height:115px; z-index:1; left: 85px; top: 100px"><a href="Admin/Chemin.php">xxxxxx</a></div>
+</BODY> 
+</HTML> 

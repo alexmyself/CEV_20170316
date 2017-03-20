@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang='fr'>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Site d&eacute;panneuse | treuil tirage cable et fibre">
+	<meta name='robots' content='noarchive'>
+	<title>::::CEV:: Promotions</title>
+	<link rel="shortcut icon" href="images/favicons/favicon.ico?v=1">
+
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+</head>
+
+<style type="text/css">
+*, body{
+	margin:0px;
+	padding:0px;}
+	
+div, span{
+	position:relative;
+	display:inline-block;
+}
+
+a:link, a:link *, a:visited, a:visited *{color:blue;}
+
+a:hover, a:hover *{
+background-color:blue;
+color:white;
+cursor:pointer;
+}
+a.linkBorder > div:hover {
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;}
+a.linkBorder:hover, a.linkBorder:hover *{
+	background-color:rgb(234,234,240);
+	color:blue;}
+
+
+
+.bgRed{background-color:red;}
+.bgBlue{background-color: rgb(244, 244, 250);}
+.bgBlue2{background-color:  #DFE2FF;}
+.bgBlack{background-color:black;}
+.bgYellow{background-color:yellow;}
+.bgWhite{background-color:white;}
+.b{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+}
+.bBig{
+	border-style:solid;
+	border-width:0.4em;
+	border-color:black;
+}
+.bl{
+	border-left-style:solid;
+	border-left-width:1px;
+	border-left-color:black;
+}
+.bb{
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:black;
+}
+.pl{padding-left:0.5em;}
+.bossLayer{}
+.hide{visibility:hidden;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{clear:both;}
+.ml{margin-left:2em;}
+.fontb{font-weight:bold;}
+.fontRed{color:red;}
+.fontWhite{color:white;}
+.fontBlue{color:blue;}
+.ib{display:inline-block;}
+
+
+#Promotions{
+	font-size: 6em;
+	font-weight: bold;
+}
+
+#date{
+	font-size:4.5em;
+	font-weight: bold;
+	font-family:monospace;
+	color:grey;
+	margin-left:0.5em;
+	}
+#depart{
+	font-size:1em;
+	font-weight: bold;
+	}
+	
+.colonne{
+	width:30%;
+	margin:0.9em;
+	float:left;
+}
+
+.containerArticle{
+	float:left;
+	padding:0.5em;
+}
+
+.backgroundArticle{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:-3;
+}
+.titreArticle, .reference, .prix{
+	font-size:1.8em;
+	font-weight:bold;
+}
+.containerImg{
+	margin-top:0.5em;
+	margin-bottom:1em;
+	width:98%;
+}
+.imageArticle{
+/*	width:100%;*/
+}
+.containerDescription, .containerCaracteristiques{
+	margin-bottom:1em;
+	color:black;
+}
+.containerRefPrix{
+	width:100%;
+	z-index:-2;
+}
+.reference, .prix{color:blue;}
+.titreArticle{color:red;}
+.backgroundText{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:-1;
+}
+.etoile{
+	position:absolute;
+	display:inline-block;
+	width:10px;
+	z-index:-3 ;
+}
+</style>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.9.3/dojo/dojo.js" data-dojo-config="async:false"></script>
+<script>
+require(["dojo/window", "dojo/query", "dojo/NodeList-traverse", "dojo/NodeList-manipulate", "dojo/domReady!"], function(win, query){
+
+	winBox = win.getBox();
+	window.winW = winBox.w;
+	window.winH = winBox.h;
+
+	var nbArticle = 3;
+	var marge = 10;
+	var containerArticleW = window.winW/nbArticle-3.8*marge;
+	query(".containerArticle").style("width", containerArticleW+"px");
+	query(".containerArticle").style("margin", marge+"px");
+	query(".containerArticle").style("marginTop", "2em");
+
+	query(".etoile").forEach(function(node){
+		var parentW = parseInt(query(node).parent().style("width"));
+		var parentH = parseInt(query(node).parent().style("height"));
+		//var coef = 1.3;
+		var coef = 45;
+		var nw = parentW+coef;
+		var nh = parentH+coef;
+		var nl = (nw - parentW) /2;
+		query(node).style("width", nw+"px");
+		query(node).style("height", nw+"px");
+		query(node).style("top", "-"+(nw-parentH)/2+"px");
+		query(node).style("left", "-"+(nw-parentW)/2+"px");
+		query(node).style("opacity", 0.85);
+	});
+		
+		
+	query(".containerPrix").forEach(function(node){
+		var W = 0;
+		query(node).children().forEach(function(nodeChild){
+			W += parseInt(query(nodeChild).style("width"));
+		});
+		query(node).style("width", W);
+	});
+	
+	query(".backgroundText").style("opacity", 0.6);
+	query(".imageArticle").style("maxHeight", winH/4+"px");
+	query(".imageArticle").style("maxWidth", containerArticleW+"px");
+});
+</script>
+<table class="" id="enTete" style="width:100%;">
+  <tr> 
+    <td colspan="2" align="center" style="padding:1px;"> <img src="images/logoCEV_180.jpg" height="80px"></td>
+    <td colspan="3"  align="center" bgcolor="black"> 
+		<b><font size="5" color="#FFFFFF">Treuils - Dépanneuses - Accessoires - Signalisation
+											<br>Pose de câble</font></b>
+    </td>
+  </tr>
+  <tr class="bgBlue2"> 
+    <td   style="padding-bottom:2px;" align="center" width="25%" ><b><a href="societe.html">La soci&eacute;t&eacute;</a></b></td>
+    <td  align="center" width="25%" ><b><a href="actualite.htm">Actualit&eacute;s</a></b></td>
+    <td  align="center" ><b><a href="depanneuse_cev.htm">D&eacute;panneuse sommaire</a></b></td>
+    <td  align="center" ><b><a href="index.htm">Sommaire</a></b></td>
+    <td  align="center" ><b><a href="formulaire.html">Contactez-nous</a></b></td>
+  </tr>
+</table>
+
+
+<div id="promotionsContainer" style="width:100%; text-align:center; margin-top:2em;">
+	<span id="Promotions" class="fontBlue" >Promotions</span>
+	<!--<span id="date" style="">[Octobre 2015]</span>-->
+	<br>
+	<span id="depart">(prix départ Ecquevilly)</span>
+</div>
+<br>
+
+
+<!-- MODELE d'ARTICLE
+<div id="Rampe-12S" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Rampe à LED 12S</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/Penetration/LED3_250.jpg">
+	</div>
+	<div class="containerDescription fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>-16 modules de 3 led.
+		<br>-9 types de flash réglable.
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText  bgWhite"></div>
+		<table><tr><td colspan="3"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td>Longueur</td><td>: 1.52</td><td>m</td></tr>
+			<tr><td>Feux</td><td>: 16x3</td><td>LED</td></tr>
+			<tr><td>Tension</td><td>: 12/24</td><td>V</td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 7312L1M52</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				790€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+-->
+<!--
+<div id="col1" class="colonne">
+<div id="rampe_700S" class="containerArticle">
+	<div class="backgroundArticle"></div>
+	<div class="titreArticle">Rampe lumineuse 700S</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/promotions/rampe-700S.jpg">
+	</div>
+	<div class="containerDescription fl ml bl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+		<br>Lettrage: "DEPANNAGE".
+		<br>Option: lettrage personalisable.
+	</div>
+	<span class="containerCaracteristiques fl ml bl">
+		<div class="backgroundText"></div>
+		<table class="fontb"><tr><td colspan="3"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td>Longueur</td><td>: 1.22</td><td>m</td></tr>
+			<tr><td>Feux</td><td>: 2</td><td></td></tr>
+			<tr><td>Tension</td><td>: 12</td><td>V</td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 724812</span>
+		<span class="fr ml">
+			<span class="prix">Prix:&nbsp;&nbsp;</span>
+			<span class="prix ib" style="color:red;">315€&nbsp;ht
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+			</span>
+		</span>
+	</div>
+</div>
+<div id="feu-rotatif-300-2" class="containerArticle">
+	<div class="backgroundArticle"></div>
+	<div class="titreArticle">Feu rotatif série 300</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/feux_rotatifs/300_3PTS.jpg">
+	</div>
+	<div class="containerDescription fl ml bl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+		<br>Fixation magnétique
+		<br>livré sans ampoule
+	</div>
+	<span class="containerCaracteristiques fl ml bl">
+		<div class="backgroundText"></div>
+		<b>CARACTERISTIQUES:</b>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference clear fl">Réf: 71FRMSA</span>
+		<span class="fr ml">
+			<span class="prix">Prix:&nbsp;&nbsp;</span>
+			<span class="prix ib" style="color:red;">25.92€&nbsp;ht
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+			</span>
+		</span>
+	</div>
+</div>
+<div id="feu-de-penetration" class="containerArticle">
+	<div class="backgroundArticle"></div>
+	<div class="titreArticle">Feu de pénétration</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/Penetration/LED3_250.jpg">
+		<img class="imageArticle" src="images/signalisations/Penetration/LRD3_encombrement.jpg" width="250px">
+	</div>
+	<div class="containerDescription fl ml bl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+		<br>-forte puissance
+		<br>-orange
+	</div>
+	<span class="containerCaracteristiques fl ml bl">
+		<div class="backgroundText"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>-12/24 volts
+		<br>-14 cadences de clignotement programmables.
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 73LED3O1224</span>
+		<span class="fr ml">
+			<span class="prix">Prix:&nbsp;&nbsp;</span>
+			<span class="prix ib" style="color:red;">80€&nbsp;ht
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+			</span>
+		</span>
+	</div>
+</div>
+</div>
+
+<div id="col2" class="colonne">
+<div id="radio_L9000" class="containerArticle">
+	<div class="backgroundArticle"></div>
+	<div class="titreArticle">Commande radio ECO</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/Commande_radio/L9000/L9000_400.jpg">
+	</div>
+	<div class="containerDescription fl ml bl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+		<br>2 fonctions.
+	</div>
+	<span class="containerCaracteristiques fl ml bl">
+		<div class="backgroundText"></div>
+		<table class="fontb"><tr><td colspan="4"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td></td><td><b></b></td></tr>
+			<tr><td>Emetteur:</td><td>hauteur</td><td>: 120</td><td>mm</td></tr>
+			<tr><td></td><td>largeur</td><td>: 75</td><td>mm</td></tr>
+			<tr><td></td><td>Epaisseur</td><td>: 36</td><td>mm</td></tr>
+			<tr><td>Récepteur:</td><td>hauteur</td><td>: 120</td><td>mm</td></tr>
+			<tr><td></td><td>largeur</td><td>: 156</td><td>mm</td></tr>
+			<tr><td></td><td>Epaisseur</td><td>: 51</td><td>mm</td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: L9000</span>
+		<span class="fr ml">
+			<span class="prix">Prix:&nbsp;&nbsp;</span>
+			<span class="prix ib" style="color:red;">280€&nbsp;ht
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+			</span>
+		</span>
+	</div>
+</div>
+<div id="projecteur-led" class="containerArticle">
+	<div class="backgroundArticle"></div>
+	<div class="titreArticle">Projecteur de travail orientable à LED</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/Projecteur/Proj_9LED/de_220.jpg">
+	</div>
+	<div class="containerDescription fl ml bl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+	</div>
+	<span class="containerCaracteristiques fl ml bl">
+		<div class="backgroundText"></div>
+		<b>CARACTERISTIQUES:</b>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference clear fl">Réf: 73LED9WZ</span>
+		<span class="fr ml">
+			<span class="prix">Prix:&nbsp;&nbsp;</span>
+			<span class="prix ib" style="color:red;">99€&nbsp;ht
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+			</span>
+		</span>
+	</div>
+</div>
+<div id="Treuil-12-volts" class="containerArticle">
+	<div class="backgroundArticle"></div>
+	<div class="titreArticle">Treuil 12 volts</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/treuils_electrique/DV/DV6000S.jpg">
+	</div>
+	<div class="containerDescription fl ml bl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+		<br>
+		<br>Livré avec:
+		<br>-Câble acier de 24 mètres,  diamètre 7 mm + crochet.
+		<br>-Commande à distance  longueur 3m50.
+		<br>-Guide câble à rouleaux.
+		<br>
+		<br>Utilisation:
+		<br>-Véhicule tourisme 4x4.
+	</div>
+	<span class="containerCaracteristiques fl ml bl">
+		<div class="backgroundText"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>force: 2700kg;
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: DV6000S</span>
+		<span class="fr ml">
+			<span class="prix">Prix:&nbsp;&nbsp;</span>
+			<span class="prix ib" style="color:red;">550€&nbsp;ht
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+			</span>
+		</span>
+	</div>
+</div>
+</div>
+
+<div id="col3" class="colonne">
+<div id="feu-rotatif-300" class="containerArticle">
+	<div class="backgroundArticle"></div>
+	<div class="titreArticle">Feu rotatif série 300</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/feux_rotatifs/300_3PTS.jpg">
+	</div>
+	<div class="containerDescription fl ml bl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+		<br>Fixation par 3 points
+		<br>livré sans ampoule
+	</div>
+	<span class="containerCaracteristiques fl ml bl">
+		<div class="backgroundText"></div>
+		<b>CARACTERISTIQUES:</b>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 71FR3BSA</span>
+		<span class="fr ml">
+			<span class="prix">Prix:&nbsp;&nbsp;</span>
+			<span class="prix ib" style="color:red;">19.66€&nbsp;ht
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+			</span>
+		</span>
+	</div>
+</div>
+<div id="projecteur" class="containerArticle">
+	<div class="backgroundArticle"></div>
+	<div class="titreArticle">Projecteur de travail orientable</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/Proj_6540.jpg">
+	</div>
+	<div class="containerDescription fl ml bl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+		<br>livré sans ampoule
+	</div>
+	<span class="containerCaracteristiques fl ml bl">
+		<div class="backgroundText"></div>
+		<b>CARACTERISTIQUES:</b>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 6540</span>
+		<span class="fr ml">
+			<span class="prix">Prix:&nbsp;&nbsp;</span>
+			<span class="prix ib" style="color:red;">21€&nbsp;ht
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+			</span>
+		</span>
+	</div>
+</div>
+</div>
+-->
+
+
+<div id="Rampe-12S" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Rampe à LED 12S</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/Signalisation%20lumineuse%20Hallo%20LED/rampe_led_s12_img7.png">
+	</div>
+	<div class="containerDescription fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>-16 modules de 3 led.
+		<br>-9 types de flash réglable.
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText  bgWhite"></div>
+		<table><tr><td colspan="3"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td>Longueur</td><td>: 1.52</td><td>m</td></tr>
+			<tr><td>Feux</td><td>: 16x3</td><td>LED</td></tr>
+			<tr><td>Tension</td><td>: 12/24</td><td>V</td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 7312L1M52</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				830€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="Rampe-A13" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Rampe à LED A13</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/Actualite_new/A13LED2.png">
+	</div>
+	<div class="containerDescription fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>-12 modules de 4 led.
+		<br>-Double flash orange.
+		<br>-120 flashs / minutes.
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText  bgWhite"></div>
+		<table><tr><td colspan="3"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td>Longueur</td><td>: 1.50</td><td>m</td></tr>
+			<tr><td>Feux</td><td>: 12x4</td><td>LED</td></tr>
+			<tr><td>Tension</td><td>: 12/24</td><td>V</td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 69A131M50</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				740€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="Treuil-Rep8" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Treuil 12 volts REP 8.5e GR</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/promotions/treuil-rep8.png">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>
+		<br>Livré avec:
+		<br>-Câble acier 30m.
+		<br>-Guide câble.
+		<br>-Commande à distance filaire.
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>force: 3850kg.
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: R111085</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				730€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<hr style="clear:both; visibility:hidden;">
+
+
+
+<div id="radio_L9000" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Commande radio ECO</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/Commande_radio/L9000/L9000_400.jpg">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>2 fonctions.
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<table class="fontb"><tr><td colspan="4"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td></td><td><b></b></td></tr>
+			<tr><td>Emetteur:</td><td>hauteur</td><td>: 120</td><td>mm</td></tr>
+			<tr><td></td><td>largeur</td><td>: 75</td><td>mm</td></tr>
+			<tr><td></td><td>Epaisseur</td><td>: 36</td><td>mm</td></tr>
+			<tr><td>Récepteur:</td><td>hauteur</td><td>: 120</td><td>mm</td></tr>
+			<tr><td></td><td>largeur</td><td>: 156</td><td>mm</td></tr>
+			<tr><td></td><td>Epaisseur</td><td>: 51</td><td>mm</td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: L9000</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				280€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="feu-rotatif-300" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Feu de travail à LED</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/promotions/feu_de_travail_LED.png">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>Magnétique
+		<br>Rechargeable
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<table class="fontb"><tr><td colspan="4"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td></td><td><b></b></td></tr>
+			<tr><td>Ampoule</td><td>: LED</td><td>: 5x 3</td><td>watts</td></tr>
+			<tr><td>Puissance</td><td>: 600</td><td></td><td>lumens</td></tr>
+			<tr><td>Autonomie</td><td>: 3-4</td><td></td><td>h</td></tr>
+			<tr><td>Protection</td><td>: IP67</td><td></td><td></td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 73LEDPORTWL</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				59€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="feu-rotatif-300" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Feu rotatif série 300</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/feux_rotatifs/300_3PTS.jpg">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>Fixation par 3 points
+		<br>livré sans ampoule
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b></b>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 71FR3BSA</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				19.66€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<hr style="clear:both; visibility:hidden;">
+
+
+
+<div id="feu_carre-5-led" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Feu rotatif série 300</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/feux_rotatifs/300_3PTS.jpg">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>Fixation magnétique
+		<br>livré sans ampoule
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b></b>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference clear fl">Réf: 71FRMSA</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				25.92€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="projecteur-led" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Projecteur de travail orientable à LED</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/feu_carre-5-led.png">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b></b>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference clear fl">Réf: 73LED5WL</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				63€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="projecteur" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Projecteur de travail orientable</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/Proj_6540.jpg">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>livré sans ampoule
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b></b>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 6540</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				21€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<hr style="clear:both; visibility:hidden;">
+
+
+
+<div id="feu-de-penetration" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Feu de pénétration</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/signalisations/Penetration/Feu_penetration.png">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>-forte puissance
+		<br>-orange: 73LED6O1224
+		<br>-clair: 73LED6C1224
+		<br>-bleu:  73LED6B1224
+		<br>-rouge:  73LED6R1224
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>-12/24 volts
+		<br>-6 LED
+		<br>-10 cadences de clignotement programmables.
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 73LED6O1224</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				45€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="rampe_700S" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Rampe lumineuse 700S</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/promotions/rampe-700S.png">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>Lettrage: "DEPANNAGE".
+		<br>Option: lettrage personnalisable.
+	</div>
+	<span class="containerCaracteristiques fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<table class="fontb"><tr><td colspan="3"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td>Longueur</td><td>: 1.22</td><td>m</td></tr>
+			<tr><td>Feux</td><td>: 2</td><td></td></tr>
+			<tr><td>Tension</td><td>: 12</td><td>V</td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 724812</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				330€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="rampe_700S_LED" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Rampe lumineuse 700S LED</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/promotions/rampe-lumineuse_700S_LED.png">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>Lettrage: "DEPANNAGE".
+		<br>Option: lettrage personnalisable.
+	</div>
+	<span class="containerCaracteristiques fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<table class="fontb"><tr><td colspan="3"><b>CARACTERISTIQUES:</b></td></tr>
+			<tr><td>Longueur</td><td>: 1.22</td><td>m</td></tr>
+			<tr><td>Feux</td><td>: 2</td><td>LED</td></tr>
+			<tr><td>Tension</td><td>: 12/24</td><td>V</td></tr>
+		</table>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: 7248LED</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				420€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+
+
+
+
+<!--
+<div id="Treuil-HV12" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Treuil Hydraulique HV12</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/treuils_hydraulique/HV/HV15000P_400.jpg">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText"></div>
+		<b>DESCRIPTION:</b>
+		<br>-Décrabotage manuel du tambour.
+		<br>-Guide-câble à rouleaux.
+		<br>(presse-câble en option)
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>force: 5400kg.
+		<br><span style="color:white;font-weight:bold;background-color:red;">&nbsp;!! QUANTITE LIMITEE !!&nbsp;</span>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réference: HV12</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				1050€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="Treuil-DS9-5" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Treuil 12 volts DS 9.5</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/promotions/treuil_DS9-5.jpg">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>
+		<br>Livré avec:
+		<br>-Câble acier 30m.
+		<br>-Guide câble.
+		<br>-Commande à distance filaire (5m).
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>force: 4300kg.
+		<br><span style="color:white;font-weight:bold;background-color:red;">&nbsp;!! QUANTITE LIMITEE !!&nbsp;</span>
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: DS9.5S</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				705€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="Treuil-Rep8" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Treuil 12 volts REP 8.5e GR</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/promotions/treuil-rep8.png">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>
+		<br>Livré avec:
+		<br>-Câble acier.
+		<br>-Guide câble.
+		<br>-Commande à distance filaire.
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>force: 3850kg.
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: R111085</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				730€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="Treuil-DV9" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Treuil 12 volts DV9</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/promotions/treuil-dv9.png">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>
+		<br>Livré avec:
+		<br>-Câble acier.
+		<br>-Commande à distance filaire.
+		<br>-Guide câble.
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>force: 4000kg;
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: DV9/12</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				620€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+<div id="Treuil-DV6000S" class="containerArticle">
+	<div class="backgroundArticle bgWhite b"></div>
+	<div class="titreArticle">Treuil 12 volts DV6000S</div>
+	<div class="containerImg fl">
+		<img class="imageArticle" src="images/treuils_electrique/DV/DV6000S.jpg">
+	</div>
+	<div class="containerDescription fl ml pl">
+		<div class="backgroundText bgWhite"></div>
+		<b>DESCRIPTION:</b>
+		<br>
+		<br>Livré avec:
+		<br>-Câble acier 24 mètres, diamètre 7mm + crochet.
+		<br>-Guide-câble à rouleux.
+		<br>-Commande à distance filaire lg. 3m50.
+		<br>
+		<br>Utilisation:
+		<br>-Véhicule tourisme 4x4.
+	</div>
+	<span class="containerCaracteristiques fl ml">
+		<div class="backgroundText bgWhite"></div>
+		<b>CARACTERISTIQUES:</b>
+		<br>force: 2700kg;
+	</span>
+	<div class="containerRefPrix clear">
+		<span class="reference fl">Réf: DV6000S</span>
+		<span class="fr ml containerPrix">
+			<span class="prix fl">Prix:&nbsp;&nbsp;&nbsp;</span>
+			<span class="prix fr" style="color:red; z-index:-1;">
+				<img class="etoile" src="images/promotions/00_etoile2.png">
+				490€&nbsp;ht
+			</span>
+		</span>
+	</div>
+</div>
+-->
+
+</body>
+</html>

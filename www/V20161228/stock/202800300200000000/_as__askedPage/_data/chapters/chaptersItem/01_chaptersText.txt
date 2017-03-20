@@ -1,0 +1,10 @@
+Distributeur avec commande pneumatique.
+Possibilité de commande supplémentaire:
+	-manuelle
+	-manuelle de secours à poussoir
+	-régulateur de débit
+
+En association avec les électrovalves 1599 ce distributeur devient électropneumatique.
+
+Un grande nombre de ces distributeurs sont tenus en stock dans notre magasin.
+Faites nous part de votre demande.

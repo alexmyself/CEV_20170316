@@ -1,0 +1,8 @@
+Distributeur avec commande électrique.
+Possibilité de commande supplémentaire:
+	-manuelle
+	-manuelle de secours à poussoir
+	-régulateur de débit
+
+Un grande nombre de ces distributeurs sont tenus en stock dans notre magasin.
+Faites nous part de votre demande.

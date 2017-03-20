@@ -1,0 +1,4 @@
+/*_____________MicroData CSS*/
+#bottomBarMicroData a{color: blue;}
+#bottomBarMicroData, #bottomBarMicroData div{display: inline-block;}
+#bottomBarMicroData table {text-align: left;}

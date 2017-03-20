@@ -1,0 +1,96 @@
+
+	* {	margin:0;
+		padding:0;
+		font-size:15px;
+		font-family:"Times New Roman",serif;}
+
+	.body{width:1222px;}
+	
+	image{
+		border:none;}
+	table{
+		text-align:left;
+		border-collapse:collapse;}
+	th{margin-right:1em;}
+	div {
+		border-style:dashed;
+		border-width:0px;}
+
+	a:link, a:link *, a:visited, a:visited *{color:blue;}
+
+	a:hover, a:hover *{
+	background-color:blue;
+	color:white;
+	cursor:pointer;}
+	
+	a.linkBorder > div:hover {
+		border-style:solid;
+		border-width:1px;
+		border-color:blue;}
+	a.linkBorder:hover, a.linkBorder:hover *{
+		background-color:rgb(234,234,240);
+		color:blue;}
+	ol, ul{
+			margin-top:0;
+			list-style-position: inside;
+		}
+
+	.bgBlue{background-color:rgb(244,244,250);}
+	.bgBlue2{background-color:rgb(234,234,240);}
+	.bgRed{background-color:rgb(255,0,0);}
+	.marginRight{margin-right:3em;}
+	.marginLeft{margin-Left:3em;}
+	.marginTop{margin-top:1em;}
+	.marginBottom{margin-bottom:1em;}
+	.fL{float:left;}
+	.fR{float:right;}
+	.clear{clear:both;}
+	.paddTnB{
+		padding-top:1em;
+		padding-bottom:1em;}
+	.paddLnR{
+		padding-left:1em;
+		padding-right:1em;}
+	.paddL{padding-left:1em;}
+	.paddR{padding-right:1em;}
+	.menuLateral{
+		border-right-style:dashed;
+		border-right-width:1px;
+		border-bottom-style:dashed;
+		border-bottom-width:1px;			
+		float:left;
+		padding-right:1em;
+		padding-left:1em;
+		}
+	.colorWhite{color:white;}
+	.border1px{
+		border-style:solid;
+		border-width:1px;
+		border-color:black;}
+	.border1pxWhite{
+		border-style:solid;
+		border-width:1px;
+		border-color:white;}		
+	.borderBottom{
+		border-bottom-style:solid;
+		border-bottom-width:1px;}
+	.borderRight{
+		border-right-style:solid;
+		border-right-width:1px;}
+	.borderLeft{
+		border-left-style:solid;
+		border-left-width:1px;}
+	.font45pxb{
+		font-size:45px;
+		font-weight:bold;}
+
+		
+	.barreHorizontale{
+		margin-right:8px;
+		width:160px;
+		float:left;
+		height: 23px;
+		text-align:center;}
+
+	.imgArtType-1{height:250px; vertical-align:top;}
+	.imgArtType-2{height:125px; vertical-align:top;}

@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang='fr'>
+	
+	<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Site treuil tirage cable et fibre">
+	<meta name='robots' content='noarchive'>
+	<title>::::CEV::</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/designCss.css">
+	</head>
+	
+	<body style="overflow:hidden; visibility:hidden;">
+
+
+	<script src="scripts/dojo-release-1.8.3/dojo/dojo.js" data-dojo-config="async: false"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js" data-dojo-config="async: false"></script>-->
+	<!--<script src="scripts/tools.js"></script>-->
+	<script src="scripts/GEOMETRY.js"></script>
+	<script src="scripts/bottomBarPop.js"></script>
+	<script src="scripts/getSide.js"></script>
+	<script src="scripts/fitIn.js"></script>
+	<script src="scripts/imageReady.js"></script>
+	<script src="scripts/domReady.js"></script>
+
+	<script>
+		require(["dojo/window"], function(win){
+			winBox = win.getBox();
+			window.winW = winBox.w;
+			window.winH = winBox.h;
+			window.bottomBar = {t:0, l:0, w:0, h:0, o:0.5};
+			});
+	</script>
+	
+	
+	
+	<div id="surface">
+		<span id="surfaceBgContainer">
+			<img class="wait" src="images/waitnew.gif">
+			<img class="image" onload="imageReady(this);" id="surfaceBgImg" src="images/cev-1920x1080.png">
+		</span>
+		<span id="surfaceContent" class="bgBlack colorWhite" style="position:absolute; margin-left:50%; margin-top:300px;">surface:</span>
+	</div>
+
+	<div id="ongletContainer" class="bgWhite">
+		<span id="ongletArticles" class="ongletTitle colorWhite bgBlack"  style="position:absolute;vertical-align:bottom;">Articles</span>
+		<span id="ongletSpacer" class="ongletTitle" style="position:absolute;"> &nbsp;|&nbsp; </span> 
+		<span id="ongletSelection" class="ongletTitle"style="position:absolute;">S&eacute;lection</span>
+		<span id="ongletSpacer2" class="ongletTitle"style="position:absolute;"> &nbsp;|&nbsp; </span>
+		<div id="ongletRecherche" class="ongletTitle"style="position:absolute;"><span id="labelRecherche" style="position:absolute;">Recherche:</span><input type="text" size="10" id="inputRecherche" class="" style="position:absolute;border-style:none;background-color:rgb(240,240,255);"></div>
+		
+	</div>
+	
+	<div id="leftBar">
+		<span id="leftBarBg" class="bg bgBlack"></span>
+
+		<div class="leftBarIconeSurface" style="position:relative;">
+			<span class="bg bgOrange"></span>
+			<span class="bgWhite leftBarIconeContainer">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/Chandelles_DS40_1.png"></span>
+		</div>
+
+		<div class="leftBarIconeSurface" style="position:relative;">
+			<span class="bg bgOrange"></span>
+			<span class="bgWhite leftBarIconeContainer">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/Devijet.png"></span>
+		</div>
+
+		<div class="leftBarIconeSurface" style="position:relative;">
+			<span class="bg bgOrange"></span>
+			<span class="bgWhite leftBarIconeContainer">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/Galet_ER4-200.png"></span>
+		</div>
+		
+		<div class="leftBarIconeSurface" style="position:relative;">
+			<span class="bg bgOrange"></span>
+			<span class="bgWhite leftBarIconeContainer">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/Galet-angle_GA3.png"></span>
+		</div>
+
+		<div class="leftBarIconeSurface" style="position:relative;">
+			<span class="bg bgOrange"></span>
+			<span class="bgWhite leftBarIconeContainer">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/Guide-fil type PVC.png"></span>
+		</div>
+		
+		<div class="leftBarIconeSurface" style="position:relative;">
+			<span class="bg bgOrange"></span>
+			<span class="bgWhite leftBarIconeContainer">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/Jet_cable.png"></span>
+		</div>
+		
+		<div class="leftBarIconeSurface" style="position:relative;">
+			<span class="bg bgOrange"></span>
+			<span class="bgWhite leftBarIconeContainer">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/Remorque_C750.png">
+			</span>
+		</div>
+
+	</div>
+
+	
+	<div id="bottomBar" style="z-index:1;">
+		<span id="bottomBarBg" class="bg bgBlack"></span>
+		
+		<div class="bottomBarIconeSurface">
+			<span class="bg bgBlack"></span>
+			<span class="bottomBarIconeContainer bgWhite">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/Chandelles_DS40_1.png">
+			</span>
+		</div>
+		
+		<div id="iconControl">
+			<span id="iconControl1" class="iconControlContainer ">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image " onload="imageReady(this);" src="images/iconMinimize.png"></span>
+			<span id="iconControl2" class="iconControlContainer">
+				<img class="wait" src="images/waitnew.gif">
+				<img class="image" onload="imageReady(this);" src="images/iconMaximize.png"></span>
+				
+		</div>
+	</div>
+
+	
+	
+	
+	
+	
+	<div id="vignettes" style="">
+	
+		<div class="surfaceVignette border1px" style="width:200px; height:200px;">
+			<div class="bg"></div>
+				<span class="vignetteContainerImg border1px"> 
+					<img class="wait" src="images/waitnew.gif">
+					<img class="image bgWhite" onload="imageReady(this);" src="images/Remorque_C750.png">
+				</span>
+		</div>
+		
+		
+				<div class="surfaceVignette border1px" style="width:200px; height:200px;">
+			<div class="bg"></div>
+				<span class="vignetteContainerImg border1px"> 
+					<img class="wait" src="images/waitnew.gif">
+					<img class="image bgWhite" onload="imageReady(this);" src="images/Remorque_C750.png">
+				</span>
+		</div>
+		
+		
+				<div class="surfaceVignette border1px" style="width:200px; height:200px;">
+			<div class="bg"></div>
+				<span class="vignetteContainerImg border1px"> 
+					<img class="wait" src="images/waitnew.gif">
+					<img class="image bgWhite" onload="imageReady(this);" src="images/Remorque_C750.png">
+				</span>
+		</div>
+		
+		
+				<div class="surfaceVignette border1px" style="width:200px; height:200px;">
+			<div class="bg"></div>
+				<span class="vignetteContainerImg border1px"> 
+					<img class="wait" src="images/waitnew.gif">
+					<img class="image bgWhite" onload="imageReady(this);" src="images/Remorque_C750.png">
+				</span>
+		</div>
+		
+		
+				<div class="surfaceVignette border1px" style="width:200px; height:200px;">
+			<div class="bg"></div>
+				<span class="vignetteContainerImg border1px"> 
+					<img class="wait" src="images/waitnew.gif">
+					<img class="image bgWhite" onload="imageReady(this);" src="images/Remorque_C750.png">
+				</span>
+		</div>
+		
+		
+				<div class="surfaceVignette border1px" style="width:200px; height:200px;">
+			<div class="bg"></div>
+				<span class="vignetteContainerImg border1px"> 
+					<img class="wait" src="images/waitnew.gif">
+					<img class="image bgWhite" onload="imageReady(this);" src="images/Remorque_C750.png">
+				</span>
+		</div>
+		
+		
+				<div class="surfaceVignette border1px" style="width:200px; height:200px;">
+			<div class="bg"></div>
+				<span class="vignetteContainerImg border1px"> 
+					<img class="wait" src="images/waitnew.gif">
+					<img class="image bgWhite" onload="imageReady(this);" src="images/Remorque_C750.png">
+				</span>
+		</div>
+		
+		
+		
+	</div>
+	</body>
+</html>

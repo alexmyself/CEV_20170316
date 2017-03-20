@@ -1,0 +1,142 @@
+﻿<html>
+<head>
+<title>D&eacute;panneuse CEV plateau porte engin</title>
+<meta name="description" content="CEV : vehicule porte engin articulé treuil &eacute;lectrique, hydraulique, manuel. Equipement de levage et de d&eacute;pannage pour le loisir 4x4, les poids-lourds, les d&eacute;panneuses et l'industrie">
+<meta name="keywords" content="treuil,&eacute;lectrique,hydraulique,levage,&eacute;quipement,d&eacute;pannage,CEV,d&eacute;panneuse,industriel,manuel,m&eacute;canique,plateau,porte voiture,4x4,c&acirc;ble,camion grue,carrosserie industrielle,diabolo,halage,palan,quad,ramsey treuil,remorquage,v&eacute;hicule d&eacute;pannage,winch,basculant,electrique,equipement,depannage,depanneuse,mecanique,cable,vehicule,TREUIL,ELECTRIQUE,HYDRAULIQUE,LEVAGE,EQUIPEMENT,PLATEAU DE DEPANNAGE,cev,DEPANNEUSE,INDUSTRIEL,MANUEL,MECANIQUE,PLATEAU,PORTE VOITURE,4X4,CABLE,CAMION GRUE,CARROSSERIE INDUSTRIELLE,DIABOLO,HALAGE,PALAN,QUAD,RAMSEY TREUIL,REMORQUAGE,V&Eacute;HICULE DEPANNAGE,WINCH,BASCULANT,treuils,&eacute;lectriques,hydrauliques,&eacute;quipements,d&eacute;pannages,d&eacute;panneuses,industriels,manuels,m&eacute;caniques,plateaux,portes voitures,c&acirc;bles,camions grues,carrosseries industrielles,palans,remorquages,v&eacute;hicules,basculants,trueil,C.E.V.,porte-voiture,camion-grue,porte-voitures">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<style type="text/css">
+*, body, body *{
+	margin:0px;
+	padding:0px;
+}
+.bgRed{background-color:red;}
+.photo{
+	margin:0px;
+	padding:0px;
+	/*max-height:250px;*/
+	border-style:solid;
+	border-width:1px;
+	border-color:white;
+	cursor:pointer;
+}
+</style>
+
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js" data-dojo-config="async:false"></script>
+<script>
+require(["dojo/query", "dojo/mouse", "dojo/on", "dojo/window", "dojo/dom-attr", "dojo/dom-geometry", "dojo/domReady!"], function(query, mouse, on, win, domAttr, domGeom){
+	winBox = win.getBox();
+	window.winW = winBox.w;
+	window.winH = winBox.h;
+	var nbImg = 6;
+	var small = window.winW / nbImg - 6;
+	var bigW = window.winW-2;
+	var bigH = window.winH-2; 
+	query(".photo").style("width", small+"px");
+	
+	function fullScreen(nodeSelector){
+		query(nodeSelector).style("width", bigW+"px");
+		if(query(nodeSelector).style("height") > window.winH){
+			query(nodeSelector).style("height", bigH+"px");
+			query(nodeSelector).style("width", "auto");
+		}
+	}
+	
+	query(".photo").forEach(function(node){
+		on(node, "click", function(){
+			if((small-1 <= query(node).style("width")) && (query(node).style("width") <= small+1)){
+				//query(node).style("maxHeight", "none");
+				fullScreen(node);
+			}
+			else{
+				query(node).style("height", "");
+				//query(node).style("maxHeight", "250px");
+				query(node).style("width", small+"px");
+				
+			}
+			win.scrollIntoView(node);
+		});
+	});	
+	
+	
+});
+</script>
+<table class="" id="enTete" style="width:100%;">
+  <tr> 
+    <td colspan="2" align="center" style="padding:1px;"> <img src="images/logo151.gif" height="60px"></td>
+    <td colspan="3"  align="center" bgcolor="black"> 
+		<b><font size="5" color="#FFFFFF">Une gamme compl&egrave;te de treuils et d'&eacute;quipement de d&eacute;pannage routier</font></b>
+    </td>
+  </tr>
+  <tr bgcolor="#CC3300"> 
+    <td   style="padding-bottom:2px;" align="center" width="25%" ><b><a href="societe.html">La soci&eacute;t&eacute;</a></b></td>
+    <td  align="center" width="25%" ><b><a href="actualite.htm">Actualit&eacute;s</a></b></td>
+    <td  align="center" ><b><a href="depanneuse_cev.htm">D&eacute;panneuse sommaire</a></b></td>
+    <td  align="center" ><b><a href="index.htm">Sommaire</a></b></td>
+    <td  align="center" ><b><a href="formulaire.html">Contactez-nous</a></b></td>
+  </tr>
+</table>
+
+
+
+
+<div style="position:relative; background-color:black; padding-top:0px;">
+
+	<div id="titre" class="bgRed" style="margin-bottom:0px; position:relative; width:50%; left: 25%;"> 
+		<h1 align="center"><font size="6" face="Arial, Helvetica, sans-serif" color="white">Plateau Porte Engins Articul&eacute;<br>AT 1500</font></h1>
+	</div>
+
+	<img class="photo" src="images/depannage/AT1000/AT1500/SCANIA_AT_0008.jpg">
+	<img class="photo" src="images/depannage/AT1000/AT1500/SCANIA_AT_0005.jpg">
+	<img class="photo" src="images/depannage/AT1000/AT1500/IVECO_AT_GRUE_H_003.jpg">
+	<img class="photo" src="images/depannage/AT1000/AT1500/IVECO_AT_GRUE_H_004.jpg">
+	<img class="photo" src="images/depannage/AT1000/AT1500/AT_DAF_PERF_011.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/AT1500/VOLVO_FMX_AT_001.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/VOLVO_FMX_AT008.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/VOLVO_FMX_AT_015.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/VOLVO_FMX_AT_016.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/AT1500/DAF_AT_HIAB_07.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/DAF_AT_001.jpg">
+	<img class="photo" src="images/depannage/AT1000/AT1500/DAF_AT_005.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/DAF_AT_008.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/DAF_AT_010.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/AT_DAF_PERF_003.jpg">
+	<img class="photo" src="images/depannage/AT1000/AT1500/AT_DAF_PERF_005.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/AT1500/MAN_8X2_AT_GRUE_005.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/MAN_8X2_AT_GRUE_008.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/AT1500/DAF_8X2_AT_G_003.jpg">
+    <img class="photo" src="images/depannage/AT1000/AT1500/DAF_8X2_AT_G_006.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/position_chargt_Ar_D.jpg">
+    <img class="photo" src="images/depannage/AT1000/position_chargt_Ar_D_grue.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/PREMIUM/PREM%20AT%2014.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/DAF/Bleu_trans.gif">
+
+	<img class="photo" src="images/depannage/AT1000/STRALIS/STRALIS.jpg">
+    <img class="photo" src="images/depannage/AT1000/STRALIS/STRALIS1.jpg">
+    <img class="photo" src="images/depannage/AT1000/STRALIS/STRALIS2.jpg">
+    <img class="photo" src="images/depannage/AT1000/STRALIS/STRALIS3.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/MAN/3-4ArGa.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/STRALIS/AT073-4ArTrans.gif">
+
+	<img class="photo" src="images/depannage/AT1000/DAF/DAF_Grue.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/AT%20Grue%2001.jpg">
+
+	<img class="photo" src="images/depannage/AT1000/MAN/3-4ArGa1.jpg">
+	
+    <img class="photo" src="images/depannage/AT1000/Anneau_treuil.jpg">
+	<br><img class="photo" src="images/depannage/AT1000/Tete_de_chat.jpg">
+
+</div>
+</body>
+</html>

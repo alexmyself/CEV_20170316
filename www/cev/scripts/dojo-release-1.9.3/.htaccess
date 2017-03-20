@@ -1,0 +1,5 @@
+#Active un cache pour un an, replicable partout sur le réseau (proxy)
+ExpiresActive On
+ExpiresDefault "access plus 1 year"
+Header append Cache-Control "public"
+FileETag Size

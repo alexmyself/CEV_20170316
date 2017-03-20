@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang='fr'>
+	
+	<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Site treuil tirage cable et fibre">
+	<meta name='robots' content='noarchive'>
+	<title>::::CEV::</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/designCss.css">
+
+
+	
+	</head>
+	
+	<body width="100%" height="100%" style="background-color:red;">
+
+
+	<script src="scripts/dojo-release-1.8.3/dojo/dojo.js" data-dojo-config="async: false"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js" data-dojo-config="async: false"></script>-->
+	<!--<script src="scripts/tools.js"></script>-->
+	-xhr un fichier local contenant img & onload,
+	-incruster ici.
+	<div id="receptacle" style="position:relative;">wait</div>
+	<div onclick="window.swap()" style="position:relative;">!!!!! clic !!!!!!!!</div>
+	<script>
+	require(["dojo/dom", "dojo/dom-attr"], function(dom, attr){
+		window.swap = function(){
+		attr.set(dom.byId("ima"), "src", "images/Jet_cable.png");
+		}
+	});
+	
+	require(["dojo/dom", "dojo/request/xhr"], function(dom, xhr){
+		xhr("test2.html")
+			.then(function(data){
+				dom.byId("receptacle").innerHTML = data;
+				
+				// Do something with the handled data
+			  }, function(err){
+				// Handle the error condition
+			  }, function(evt){
+				// Handle a progress event from the request if the
+				// browser supports XHR2
+		  });
+		
+	
+	
+	});
+	</script>
+	
+	
+	</body>
+	</html>

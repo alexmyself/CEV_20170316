@@ -1,0 +1,15 @@
+Véhicule de dépannage à bras sur base ___manufacturer___ ___model___.
+<br>
+<br>
+<br>
+<ul>
+<li>Treuil hydraulique RPH45, 20t, câble 60m diam. 22mm.</li>
+<li>Puissance 385ch</li>
+<li>Siège type 22AVA8</li>
+<li>-L: ___depth___m, l: ___width___m, s: 22.79m²</li>
+</ul>
+<br>
+Vente pour cause de renouvellement de parc.
+<br>
+<br>
+Contact: 01.48.71.06.03

@@ -1,0 +1,3 @@
+Réducteur de tension 24V -> 12V:
+-se place sur véhicule 24V 7 ou 15 pôles
+-permet d'y connecter un cordon 12V 7 pôles

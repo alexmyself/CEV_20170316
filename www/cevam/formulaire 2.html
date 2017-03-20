@@ -1,0 +1,376 @@
+<HTML>
+<TITLE>Demande de renseignements</TITLE>
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_validateForm() { //v3.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+        if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+      } else if (test!='R') { num = parseFloat(val);
+        if (val!=''+num) errors+='- '+nm+' must contain a number.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+  } if (errors) alert('The following error(s) occurred:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+//-->
+</script>
+<BODY BGCOLOR="#FFFFFF" LINK="#FFFF99" ALINK="#00FF00" VLINK="#FFFF00">
+<table width="99%" border="0">
+  <tr> 
+    <td colspan="2" height="60"> 
+      <h1><font face="Georgia, Times New Roman, Times, serif" color="#0000FF" size="+4"><i><img src="images/Logo%20Cevam.jpg" width="302" height="60"></i></font></h1>
+    </td>
+    <td colspan="2" bgcolor="#000000" height="60"> 
+      <div align="center"><b><font size="5" color="#FFFFFF">Mat&eacute;riels pour 
+        la Pose de C&acirc;bles</font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#CC3300"> 
+    <td width="23%" height="26"> 
+      <div align="center"><b><font color="#FFFFFF"><a href="soci%E9t%E9.html">La 
+        soci&eacute;t&eacute;</a></font></b></div>
+    </td>
+    <td width="20%" height="26"> 
+      <div align="center"><b><font color="#FFFFFF"><a href="actualit%E9.htm">Actualit&eacute;s</a></font></b></div>
+    </td>
+    <td width="32%" height="26"> 
+      <div align="center"><b><font color="#FFFFFF"><a href="index.htm">Sommaire</a></font></b></div>
+    </td>
+    <td width="25%" height="26"> 
+      <div align="center"><b><font color="#FFFFFF"><a href="formulaire.html">Contactez-nous</a></font></b></div>
+    </td>
+  </tr>
+</table>
+<TABLE  WIDTH="100%" BORDER="0" VSPACE="0" HSPACE="0" CELLPADDING="4" CELLSPACING="0" bgcolor="#E0E0E0">
+  <TR>
+    <TD ALIGN="left" BGCOLOR="#333399"> 
+      <div align="center"><FONT FACE="Arial, Helvetica, sans-serif" SIZE="4" COLOR="#FFFFFF"><B>Demande 
+        d'informations compl&eacute;mentaires</B></FONT></div>
+    </TD>
+  </TR>
+</TABLE>
+<HR WIDTH="100%">
+<form action="formulaire-confirm.php" method="post" name="Formulaire" onSubmit="MM_validateForm('societe','','R','nom','','R');return document.MM_returnValue">
+  <table width="698" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#D5EAFF">
+    <tr> 
+      <td align="right" height="7"><img src="images/01-spacer-vide.gif" width="100" height="10"></td>
+      <td height="7"><img src="images/01-spacer-vide.gif" width="5" height="1"></td>
+      <td height="7"><img src="images/01-spacer-vide.gif" width="279" height="1"></td>
+      <td height="7"><img src="images/01-spacer-vide.gif" width="10" height="1"></td>
+      <td height="7"><img src="images/01-spacer-vide.gif" width="294" height="1"></td>
+      <td height="7"><img src="images/01-spacer-vide.gif" width="10" height="1"></td>
+    </tr>
+    <tr valign="middle"> 
+      <td height="30" colspan="6" align="left" class="formulaire-titre"><font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#000066">&nbsp;Mes 
+        coordonn&eacute;es :</font></b></font></td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">Soci&eacute;t&eacute; 
+        :</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="societe" type="text" id="societe" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td rowspan="11" valign="baseline"> 
+        <p class="formulaire-titre"><font size="2"><b><font face="Arial, Helvetica, sans-serif" color="#000066">Imprimez 
+          cette demande d'information sur votre imprimante et faxez-la au 01 34 
+          75 97 70<br>
+          ou cliquez sur le bouton &quot;Envoyer&quot; pour la faire parvenir 
+          directement par mail.</font></b></font></p>
+        <p class="formulaire-cnil"><font size="1" color="#999999">Les informations 
+          qui vous concernent sont destin&eacute;es &agrave; Cevam. Nous pouvons 
+          &ecirc;tre amen&eacute;s &agrave; les transmettre &agrave; des tiers 
+          (partenaires commerciaux, etc.). Si vous ne le souhaitez pas, cliquez 
+          sur &quot;Effacer&quot;.<br>
+          Vous disposez d'un droit d'acc&egrave;s, de modification, de rectification 
+          et de suppression des donn&eacute;es qui vous concernent (art. 34 de 
+          la loi &quot;Informatique et libert&eacute;s&quot;). Pour l'exercer, 
+          adressez-vous &agrave; Cevam - Zone Industrielle - 78920 Ecquevilly 
+          - France<br>
+          T&eacute;l. : 0134 75 55 06 - Fax : 01 34 75 97 70</font></p>
+      </td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" valign="baseline"> 
+        <p class="formulaire-texte">Nom :</p>
+      </td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="nom" type="text" id="nom" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">Pr&eacute;nom 
+        :</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="prenom" type="text" id="prenom3" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">Adresse :</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="adresse1" type="text" id="adresse13" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" valign="baseline">&nbsp;</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="adresse2" type="text" id="adresse23" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">Code Postal 
+        :</td>
+      <td class="formulaire-texte">&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="cp" type="text" id="cp3" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">Ville :</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="ville" type="text" id="ville3" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">Pays :</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="pays" type="text" id="pays3" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">T&eacute;l&eacute;phone 
+        :</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="tel" type="text" id="tel3" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">Fax :</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="fax" type="text" id="fax3" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align="right" class="formulaire-texte" valign="baseline">e-mail :</td>
+      <td>&nbsp;</td>
+      <td valign="baseline"> 
+        <input name="email2" type="text" id="email" size="25">
+      </td>
+      <td valign="baseline">&nbsp;</td>
+      <td valign="baseline">&nbsp;</td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="6"><img src="images/01-spacer-vide.gif" width="10" height="5"></td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="3" class="formulaire-texte">&nbsp;&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="6"><img src="images/01-spacer-vide.gif" width="10" height="5"></td>
+    </tr>
+  </table>
+  <table width="698" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFDD">
+    <tr> 
+      <td><img src="images/01-spacer-vide.gif" width="20" height="5"></td>
+      <td><img src="images/01-spacer-vide.gif" width="206" height="1"></td>
+      <td><img src="images/01-spacer-vide.gif" width="10" height="1"></td>
+      <td><img src="images/01-spacer-vide.gif" width="20" height="1"></td>
+      <td><img src="images/01-spacer-vide.gif" width="206" height="1"></td>
+      <td><img src="images/01-spacer-vide.gif" width="10" height="1"></td>
+      <td><img src="images/01-spacer-vide.gif" width="20" height="1"></td>
+      <td><img src="images/01-spacer-vide.gif" width="206" height="1"></td>
+    </tr>
+    <tr> 
+      <td height="30" colspan="2" valign="middle" class="formulaire-titre"><font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#000066">&nbsp;Je 
+        suis int&eacute;ress&eacute;(e) par...</font></b></font></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="8" valign="bottom" class="formulaire-titre">&nbsp;<img src="images/objet-fleche-rouge.gif" width="7" height="11"><font face="Arial, Helvetica, sans-serif" size="1"><b><font size="2" color="#000066">Treuils 
+        et D&eacute;rouleuses</font></b></font></td>
+    </tr>
+    <tr> 
+      <td valign="bottom" align="right">
+        <input name="trelechal" type="checkbox" id="interet17" value="oui">
+      </td>
+      <td class="corps-de-texte12" valign="bottom">&nbsp;<span class="formulaire-texte">TL2019 
+        </span></td>
+      <td>&nbsp;</td>
+      <td>
+        <input name="trhydhal" type="checkbox" id="interet123" value="oui">
+      </td>
+      <td>&nbsp;TL3022</td>
+      <td>&nbsp;</td>
+      <td>
+        <input name="trman" type="checkbox" id="interet143" value="oui">
+      </td>
+      <td>&nbsp;D&eacute;rouleuses porte touret</td>
+    </tr>
+    <tr> 
+      <td valign="bottom" align="right">
+        <input name="treleclev" type="checkbox" id="interet24" value="oui">
+      </td>
+      <td class="formulaire-texte" valign="bottom">&nbsp;TL3019</td>
+      <td>&nbsp;</td>
+      <td>
+        <input name="trhydlev" type="checkbox" id="interet133" value="oui">
+      </td>
+      <td>&nbsp;Autres</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td colspan="8" align="right" valign="bottom">&nbsp;</td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="8" valign="bottom" class="formulaire-titre">&nbsp;<img src="images/objet-fleche-rouge.gif" width="7" height="11"><font size="2" face="Arial, Helvetica, sans-serif"><b><font color="#000066">Mat&eacute;riels 
+        de portage de c&acirc;bles</font></b></font></td>
+    </tr>
+    <tr> 
+      <td valign="bottom" align="right">
+        <input name="trveh" type="checkbox" id="interet34" value="oui">
+      </td>
+      <td class="corps-de-texte12" valign="bottom">&nbsp;<span class="formulaire-texte">Mat&eacute;riel 
+        pour portage</span></td>
+      <td>&nbsp;</td>
+      <td>&nbsp; </td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="8" valign="bottom" class="formulaire-titre">&nbsp;</td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="8" valign="bottom" class="formulaire-titre">&nbsp;<img src="images/objet-fleche-rouge.gif" width="7" height="11"><font size="2" face="Arial, Helvetica, sans-serif"><b><font color="#000066">Accessoires 
+        </font></b></font> </td>
+    </tr>
+    <tr> 
+      <td valign="bottom" align="right">
+        <input name="plateau" type="checkbox" id="interet24" value="oui">
+      </td>
+      <td class="formulaire-texte" valign="bottom">&nbsp;Brins rigides</td>
+      <td>&nbsp;</td>
+      <td>
+        <input name="bras" type="checkbox" id="interet133" value="oui">
+      </td>
+      <td>&nbsp;Chausettes tire c&acirc;bles</td>
+      <td>&nbsp;</td>
+      <td>
+        <input name="cable" type="checkbox" id="interet22" value="oui">
+      </td>
+      <td>Autre</td>
+    </tr>
+    <tr> 
+      <td align="right">
+        <input name="dep" type="checkbox" id="interet24" value="oui">
+      </td>
+      <td class="formulaire-texte">&nbsp;Galets de d&eacute;roulage</td>
+      <td valign="bottom" class="formulaire-texte">&nbsp;</td>
+      <td class="formulaire-texte">
+        <input name="acc" type="checkbox" id="interet2" value="oui">
+      </td>
+      <td class="formulaire-texte">&nbsp;Furets et Obturateurs</td>
+      <td valign="bottom" class="formulaire-texte">&nbsp;</td>
+      <td class="formulaire-texte">&nbsp; </td>
+      <td class="formulaire-texte">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td><img src="images/01-spacer-vide.gif" width="1" height="1"></td>
+      <td colspan="7" class="formulaire-texte">&nbsp;</td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="8" valign="bottom" class="formulaire-titre">&nbsp;</td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="8" valign="bottom" class="formulaire-titre">&nbsp;<img src="images/objet-fleche-rouge.gif" width="7" height="11"><font size="2" face="Arial, Helvetica, sans-serif"><b><font color="#000066">Demande 
+        d'information compl&eacute;mentaires</font></b></font></td>
+    </tr>
+    <tr> 
+      <td>&nbsp;</td>
+      <td colspan="7"> 
+        <textarea name="infos" cols="50" rows="5" id="textarea2"></textarea>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="8"><img src="images/01-spacer-vide.gif" width="10" height="15"></td>
+    </tr>
+    <tr> 
+      <td colspan="8" align="center"> 
+        <input type="submit" name="Submit" value="Envoyer">
+        &nbsp;&nbsp;&nbsp;&nbsp; 
+        <input type="reset" name="Submit3" value="Effacer">
+      </td>
+    </tr>
+    <tr align="left"> 
+      <td colspan="8"><img src="images/01-spacer-vide.gif" width="10" height="8"></td>
+    </tr>
+  </table>
+</form>
+<table width="76%" border="0" height="24" align="center">
+  <tr> 
+    <td bgcolor="#CC3300" width="24%" height="22"> 
+      <div align="center"><a href="treuils.html">Treuils-cabestans</a></div>
+    </td>
+    <td bgcolor="#CC3300" width="32%" height="22"> 
+      <div align="center"><a href="appareils.html">Equipements par portage</a></div>
+    </td>
+    <td bgcolor="#CC3300" width="20%" height="22"> 
+      <div align="center"><a href="remorques.html">Remorques</a></div>
+    </td>
+    <td bgcolor="#CC3300" width="24%" height="22"> 
+      <div align="center"><a href="accessoire.htm">Accessoires</a></div>
+    </td>
+  </tr>
+</table>
+</BODY></HTML>

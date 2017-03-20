@@ -1,0 +1,1 @@
+﻿window.goTo= function(address){location.href=address;}
