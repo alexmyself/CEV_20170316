@@ -64,11 +64,13 @@ class metaList{
 		#Set exclude words arr for path finding in lineage
 		$this->excludeFromSearch= array();
 		if($this->isAskedItem==false){$this->excludeFromSearch[]='_as__askedPage';}
+/*
 if($this->id == 000000000000000001){
 	echo "\nFILE::::".__FILE__;
 	echo "\ngetParams::\n";
 	var_dump($GLOBALS['urlParamsAsked']);
 }
+*/
 		#get the datas values
 		$itemPath = $GLOBALS['PATHS']['stock'].DIRECTORY_SEPARATOR.$this->data['id'].DIRECTORY_SEPARATOR;
 		foreach($this->dataSrc as $srcName){ $this->lineage('_'.$srcName, $itemPath, $this->$srcName, $this->excludeFromSearch); }
@@ -79,16 +81,10 @@ if($this->id == 000000000000000001){
 		if(is_dir($skeletonPath)){$this->microSkelFunc($skeletonPath);}
 		$skeletonPath = $GLOBALS['PATHS']['skeletonDefault'.$this->data['type']].DIRECTORY_SEPARATOR;
 		if(is_dir($skeletonPath)){$this->microSkelFunc($skeletonPath);}
-		
-/*		if($this->data['type'] != 'site'){
-			$skeletonPath = $GLOBALS['PATHS']['skeletonDefault'].DIRECTORY_SEPARATOR;
-			$this->microSkelFunc($skeletonPath);
-		}
-*/
 
-echo "\n\n Site item, datas should be presents:\n";
-echo "\n";
-die("\nHALTED IN::::".__FILE__);
+//echo "\n\n Site item, datas should be presents:\n";
+//echo "\n";
+//die("\nHALTED IN::::".__FILE__);
 
 
 		#Case item is the asked one, overwrite values once again with datas from _as__askedPage dirs:
@@ -110,7 +106,7 @@ die("\nHALTED IN::::".__FILE__);
 
 		#Create a html link property.
 		#Only if there is none already found in one of the data dirs (case for external link).
-		if (!array_key_exists('htmlLink', $this->data)){ $this->data['htmlLink']=$GLOBALS['PATHS']['httpMotorIndex'].htmlGetParamsRebuild(['datas'=>$this->data]); }
+		if (!array_key_exists('htmlLink', $this->data)){ $this->data['htmlLink']=$GLOBALS['PATHS']['httpMotorIndex'].htmlQueryRebuild(['datas'=>$this->data]); }
 
 		#add data to navigation array if needed.
 		if($this->isAskedItem==true){ 
@@ -150,7 +146,7 @@ die("\nHALTED IN::::".__FILE__);
 		#get less specialized datas: (/stock/anId/_[data|model] or /skeleton/itemType/__[data|model]), to have some default values loaded.
 //echo "\nLineage looking for:".$targetDirName."  in dir:: ".$argPath;
 		getAndMerge($argPath.$targetDirName, $originalDatasArr);
-echo "\n\tFirst merge from root:\t".$argPath.$targetDirName;
+//echo "\n\tFirst merge from root:\t".$argPath.$targetDirName;
 		#Build lineage, the array from path of specifications to look for.
 		#Chech if lineage has already been built.
 
@@ -211,124 +207,56 @@ echo "\n\tFirst merge from root:\t".$argPath.$targetDirName;
 				}
 				if($flagBadDir===true){continue;}
 
-echo "\n\tvalid dir:(".$lineageMaxLength."/".$queryMaxLength.") \t\t".$dir;
+//echo "\n\tvalid dir:(".$lineageMaxLength."/".$queryMaxLength.") \t\t".$dir;
 
 				#look how many consecutive match in data routing land.
 				#and if it goes to default values or not
 				#point priority + point parentType + point containerType + point exactitude finale par rapport au lineage + point routing
 				#priority: 0 for default path, 1 for normal path, 2 for asked page
 				$tmpArr = array();
-				$tmpArr['path']=$dir;
-				$tmpArr['priorityScore']='';
-				$tmpArr['parentTypeScore']='';
-				$tmpArr['containerTypeScore']='';
-				$tmpArr['lineageExactitudeScore']='';
-				$tmpArr['dataRoutingScore']='0';
-				$tmpArr['finalScore']='';
-				$isDefault=false;
-				$isAskedPage=false;
-				$c=0;
+				$tmpArr['path'] 				=$dir;
+				$tmpArr['priorityScore'] 		=0; 	//Priority: 0 for normal path, 1 for asked page.
+//				$tmpArr['parentTypeScore'] 		=0; 	//Number of consecutives matching parents.(lineage array has to be inverted to reflect datas dir(s) order)
+//				$tmpArr['containerTypeScore'] 	=0; 	//Same as parenttypescore, except these containers can be ommitted without making a path unvalid.
+				$tmpArr['lineageExactitudeScore']=0; 	//Number of perfect matches of parentX/containerX/parentY/containerY/.. types.
+				$tmpArr['queryScore'] 			=0; 	//Number of url params matching.
+				$tmpArr['finalScore'] 			='';
+				$cTechDirsNames=1; 						//Count the difference between a data path and a lineage path to make them match in loops. Here +1 for "_data".
 
-				#Check the beginning of the path for routing words and if they're default ones.
-				foreach ($GLOBALS['dataRoutingPrefix'] as $value) {
-					#Routing can be (or not present at all) only asked ones or default ones, others values have to be excluded
-
-					#for software__xyz, display__xyz, ...
-					//					$strToLook1		='~^'.$value.'__'.$GLOBALS['askedPage'][$value].'$~';		//display__flat
-					//					$strToLook2		='~^'.$value.'__'.$GLOBALS['GET'][$value.'ByDefault'].'$~';	//display__default
-					//					$tmpIsARouting		= preg_match($strToLook1, $arrDirMembers[$c]);
-					//					$tmpIsADefaultRouting	= preg_match($strToLook2, $arrDirMembers[$c]);
-					//					if( ($tmpIsARouting==1) || ($tmpIsADefaultRouting==1) ){
-					$strToLook1= $value.'__'.$GLOBALS['urlParams'][$value]; 	//display__flat
-					$strToLook2= $value.'__'.$GLOBALS['GET'][$value.'ByDefault']; 	//display__default
-					if( $strToLook1 == $arrDirMembers[$c] ){ 			//It's a routing, and the asked value
-						$tmpArr['dataRoutingScore']++;
-						$c++;
-					}
-					elseif ($strToLook2 == $arrDirMembers[$c] ) { 			//It's a routing, and the default value
-						$tmpArr['dataRoutingScore']++;
-						$c++;
-						$isDefault=true;
-					}
-					elseif (preg_match('~'.$value.'__~', $arrDirMembers[$c])) { 	//It's a routing, but a wrong one, exclude it.
-						$flagBadDir=true;
-						break;
-					}
-					else{break;} 							//It's not a routing
+				if(in_array('_as__askedPage', $dirMembers)===true){
+					$tmpArr['priorityScore']=1;
+					$cTechDirsNames++;
 				}
-				if($flagBadDir){continue;}
-
-				#same for lineage land, except matching will count starting at the end of the path.
-				#counters: -1 to match array indexes, -1 more to skip the last index (_data or whatever _name).
-				#Lineage counter, supposed to be perfect.
-				$cLineageMembers = count($this->data['lineage'])-1;
-				#Dirs from data path, supposed to be far from perfect.
-				$cDataPathMembers = count($arrDirMembers)-1-1;
-				# askded page hack, "forgot" the last path part '_as__askedPage', when needed.
-				if($arrDirMembers[$cDataPathMembers]=='_as__askedPage'){
-					if($this->isAskedItem){
-						$isAskedPage=true;
-						$cDataPathMembers--;
-					}
+				//Parent/Container part of the path. Trying with no distinction between parent and container, same points for both, the longer matching chain the better.
+				//One error is accepted as a possibility to handle parent/parent (omitted container) case.
+				//Every get options can appear anywhere in path and more than once.
+				// Lineage:
+				// 		empty
+				// 		content -> ? Non? pas de sens?
+				// 		rubrique
+				//		content/rubrique
+				// 		rubrique/rubrique
+				$revDirMembers 		= array_reverse($dirMembers);
+				array_splice($revDirMembers, 0, $cTechDirsNames);
+				$revLineageNames 	= array_reverse($lineageNames);
+				$stop=count($revDirMembers);
+				for ( $intKey=0; $intKey < $stop; $intKey ++) {
+					if(in_array($revDirMembers[$intKey], $queryNames)){$tmpArr['queryScore']++;}
+					elseif( $revLineageNames[$intKey] == $revDirMembers[$intKey] ){$tmpArr['lineageExactitudeScore']++;}
+					elseif( $revLineageNames[$intKey] == $revDirMembers[$intKey+1]){continue;}
+					else{$flagBadDir=true; break;}
 				}
+				if($flagBadDir===true){continue;}
 
 
-				$flagExactitude = true;
-				#Loop through data path until we meet routing dirs.
-				for($i=$cDataPathMembers; $i>$tmpArr['dataRoutingScore']; $i--){
-					#Part of path can be container or parentType
-					$tmpIsAContainer = ($arrDirMembers[$i]=='in__'.$this->data['lineage'][$cLineageMembers])? 1:0;
-					$tmpIsParentType = ($arrDirMembers[$i-1]=='in__'.$this->data['lineage'][$cLineageMembers-1])? 1:0;
-					#No container, only parent type
-					$tmpIsParentTypeMissingContainer = ($arrDirMembers[$i]=='in__'.$this->data['lineage'][$cLineageMembers-1])? 1:0;
 
-					#Perfect case: lineage: rubrique/content 	path: in__rubrique/in__content
-					if($tmpIsAContainer==1){
-						if($flagExactitude==true){$tmpArr['lineageExactitudeScore']++;}
-						$tmpArr['containerTypeScore']++;
-						$cLineageMembers--;
-						if($tmpIsParentType==1){
-							if($flagExactitude==true){$tmpArr['lineageExactitudeScore']++;}
-							$tmpArr['parentTypeScore']++;
-							$i--;
-							$cLineageMembers--;
-						}
-						#Wrong parent type, exit.
-						else{
-							$flagBadDir=true;
-							break;
-						}
-					}
-					#Missing container case: lineage: rubrique/content 	path: in__rubrique/--
-					elseif($tmpIsParentTypeMissingContainer==1){
-						$flagExactitude=false;
-						$tmpArr['parentTypeScore']++;
-						$cLineageMembers-=1;
-					}
-
-					else{
-						$flagBadDir=true;
-						break;
-					}
-				}
-				if($flagBadDir){continue;}
-
-				#set priority score.
-				$bitDefault=0;
-				$bitAskedPage=0;
-
-				($isDefault != false)? $bitDefault=0: $bitDefault=1;
-				($isAskedPage != false)? $bitAskedPage=1: $bitAskedPage=0;
-				$tmpArr['priorityScore']=$bitAskedPage.$bitDefault;
 
 				#Cat results as a long number, 'normally', higher the better.
 				$scoreFieldLength=3;
 				$tmpArr['finalScore']=
 					''.addLeadingZeros($tmpArr['priorityScore'], $scoreFieldLength)
-					.'.'.addLeadingZeros($tmpArr['parentTypeScore'],$scoreFieldLength)
-					.'.'.addLeadingZeros($tmpArr['containerTypeScore'],$scoreFieldLength)
 					.'.'.addLeadingZeros($tmpArr['lineageExactitudeScore'],$scoreFieldLength)
-					.'.'.addLeadingZeros($tmpArr['dataRoutingScore'],$scoreFieldLength);
+					.'.'.addLeadingZeros($tmpArr['queryScore'],$scoreFieldLength);
 				$scoredArrOfDirs[]=$tmpArr;
 			}
 		}

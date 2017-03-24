@@ -2,6 +2,7 @@
 class software__default extends metaSoftware{
 	protected function login() 	{return true;} 	//No login needed for defaults values
 	protected function play() 	{
+
 		#get asked Item datas
 		$askedItem = new metaList($GLOBALS['urlParams']['path']);
 		$GLOBALS['itemsData']['askedPage'][$askedItem->data['id']] = $askedItem->properties();

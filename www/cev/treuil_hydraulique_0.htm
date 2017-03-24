@@ -1,620 +1,644 @@
 <!DOCTYPE html>
 <html lang='fr'>
 	<head>
-		<meta charset="UTF-8">
-		<title>CEV:: Treuils hydrauliques de halage</title>
-		<meta name="description" content="CEV : treuil &eacute;lectrique, hydraulique, manuel. Equipement de levage et de d&eacute;pannage pour le loisir 4x4, les poids-lourds, les d&eacute;panneuses et l'industrie">
-		<meta name="keywords" content="treuil,&eacute;lectrique,hydraulique,levage,&eacute;quipement,d&eacute;pannage,CEV,d&eacute;panneuse,industriel,manuel,m&eacute;canique,plateau,porte voiture,4x4,c&acirc;ble,camion grue,carrosserie industrielle,diabolo,halage,palan,quad,ramsey treuil,remorquage,v&eacute;hicule d&eacute;pannage,winch,basculant,electrique,equipement,depannage,depanneuse,mecanique,cable,vehicule,TREUIL,ELECTRIQUE,HYDRAULIQUE,LEVAGE,EQUIPEMENT,PLATEAU DE DEPANNAGE,cev,DEPANNEUSE,INDUSTRIEL,MANUEL,MECANIQUE,PLATEAU,PORTE VOITURE,4X4,CABLE,CAMION GRUE,CARROSSERIE INDUSTRIELLE,DIABOLO,HALAGE,PALAN,QUAD,RAMSEY TREUIL,REMORQUAGE,V&Eacute;HICULE DEPANNAGE,WINCH,BASCULANT,treuils,&eacute;lectriques,hydrauliques,&eacute;quipements,d&eacute;pannages,d&eacute;panneuses,industriels,manuels,m&eacute;caniques,plateaux,portes voitures,c&acirc;bles,camions grues,carrosseries industrielles,palans,remorquages,v&eacute;hicules,basculants,trueil,C.E.V.,porte-voiture,camion-grue,porte-voitures">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--[if lt IE 9]><script src="http://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+		<meta name="description" content="Treuils hydrauliques, pour d&eacute;panneuses, 4x4, poids lourds, quad et l'industrie">
+		<meta name="owner" Content="C.E.V.">
+		
+		<title>Treuils hydrauliques de halage</title>
+		<link rel="shortcut icon" href="http://www.cev-treuil.com/current/skeleton/default/software__default/display__default/_as__askedPage/_data/favicon.ico?v=1">
+
+			<!--Bootstrap -->
+			<!-- Latest compiled and minified CSS -->
+		<link rel='stylesheet' href='scripts/bootstrap-3.3.7-dist/css/bootstrap.min.css' integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<!-- Optional theme -->
+		<link rel="stylesheet" href="scripts/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<style>
+			.bgLightBlue{background-color: #f8f8ff;}
+			.bgTab1{background-color:White;}
+			.bgTab2{background-color:AliceBlue;}
+
+			.borderTop{border-top: solid 1px black;}
+
+			.clear{clear:both;}
+
+			.fl{float:left;}
+			.fontBlue{color:blue;}
+			.fontBold{font-weight:bold;}
+			.fontVerdana{font-family:Verdana;}
+			.fontMax{font-size: 5em;}
+			.fontMono{font-family:monospace;}
+			.fontTitle1{
+				font-size:2em;
+				color:blue;
+				font-weight:bold;
+			}
+			.fontTitle2{
+				font-size:1em;
+				color:gray;
+			}
+			.fontTitle3{font-size: 1.5em;}
+
+			h1, h2, h3, h4{display: inline;}
+
+			img{
+				max-height: 4em;
+				max-width: 100%;
+			}
+			.imgHeaderLogo{max-height: 8em;}
+
+			.marginBottom{margin-bottom: 3em;}
+			.marginTop{margin-top:2em;}
+			.marginLeft{margin-left:3em;}
+
+			.noWrap{white-space: nowrap;}
+
+			p{
+				margin-top: 0.5em;
+				margin-left: 1em;}
+
+			.table1{
+				border:2px solid blue;
+				border-collapse:collapse;
+			}
+			.table1 *{
+				padding:1px;
+				text-align:left;
+			}
+			.table1 a{border:none;}
+			.table1 .label{
+				font-family:verdana;
+				font-size:0.9em;
+			}
+			.table1 th{
+				font-family:verdana;
+				border:1px dashed blue;
+				border-bottom:2px solid black;
+			}
+			.table1 tr{border-top:1px solid grey;}
+			.table1 .value{
+				border:1px solid grey;
+				padding-left:0.5em;
+			}
+			.table1 .value, .table1 a{
+				font-family:monospace;
+				text-align:left;
+				vertical-align:center;
+			}
+			.textCenter{text-align:center;}
+			.textRight{text-align:right;}
+		</style>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]><script src="scripts/respond.js"></script><![endif]-->
 	</head>
-	<style>
-		* {
-			margin:0;
-			padding:0;
-			font-family:sans-serif;
-		}
-		div{display:inline-block;}
-		.fl{float:left;}
-		.clear{clear:both;}
-		.posRel{position:relative;}
-		.bgRed{background-color:red;}
-		.bgBlack{background-color:black;}
-		.bgOrange{background-color:#FE740E;}
-		.bgTab1{background-color:White;}
-		.bgTab2{background-color:AliceBlue;}
-		.bigMe{
-			width:2000px;
-			height:200px;
-		}
-		.fontBlue{color:blue;}
-		.fontBold{font-weight:bold;}
-		.fontVerdana{font-family:Verdana;}
-		.fontMono{font-family:monospace;}
-		.fontTitle1{
-			font-size:2em;
-			color:blue;
-			font-weight:bold;
-		}
-		.fontTitle2{
-			font-size:1em;
-			color:gray;
-		}
-		.marginTop{margin-top:2em;}
-		.container {width:100%;}
-		.marginLeft{margin-left:3em;}
-		.table1{
-			border:2px solid blue;
-			width:100%;
-			border-collapse:collapse;
-		}
-		.table1 .value{
-			border:1px solid grey;
-			padding-left:0.5em;
-		}
-		.table1 *{
-			padding:1px;
-			text-align:left;
-		}
-		.table1 tr{
-			border-top:1px solid grey;
 
-		}
-		.table1 a{border:none;}
-		.table1 th{
-			font-family:verdana;
-			border:1px dashed blue;
-			border-bottom:2px solid black;
-		}
-		.table1 .label{
-			font-family:verdana;
-			font-size:0.9em;
-			
-		}
-		.table1 .value, .table1 a{
-			font-family:monospace;
-			text-align:left;
-			vertical-align:center;
-		}
-		
-		.textCenter{text-align:center;}
-		.textRight{text-align:right;}
-	</style>
+
 	<body>
-		<div id="Entete" style="position:relative; width:100%;"> 
-		  <table width="100%">
-			<tr> 
-			  <td colspan="2" class="textCenter"><img src="images/logo151.gif"></td>
-			  <td colspan="2" class="bgBlack textCenter" style="font-size:1.3em; font-weight:bold; color:white;"> 
-				Une gamme complète de treuils et d'équipement de dépannage routier
-			  </td>
-			</tr>
-			<tr class="bgOrange"> 
-			  <td width="23%"> 
-				<div align="center"><b><font color="#FFFFFF"><a href="societe.html">La 
-				  soci&eacute;t&eacute;</a></font></b></div>
-			  </td>
-			  <td width="21%"> 
-				<div align="center"><b><font color="#FFFFFF"><a href="actualite.htm">Actualit&eacute;s</a></font></b></div>
-			  </td>
-			  <td width="31%"> 
-				<div align="center"><b><font color="#FFFFFF"><a href="index.htm">Sommaire</a></font></b></div>
-			  </td>
-			  <td width="25%"> 
-				<div align="center"><b><a href="formulaire.html">Contactez-nous</a></b></div>
-			  </td>
-			</tr>
-			<tr> 
-			  <td> 
-				<div align="center"></div>
-				</td>
-			  <td colspan="2"> 
-				<div align="center">Quelques treuils hydraulique d'occasion sont disponibles. Veuillez pr&eacute;ciser votre demande sur notre formulaire <a href="formulaire.html">Contactez-nous </a></div>
-			  </td>
-			  <td> 
-				<div align="center"><font size="4"><b></b></font></div>
-			  </td>
-			</tr>
-		  </table>
-		</div>
-
-		<div id="Titre" class="fontBlue fontVerdana" style="font-size:3em; font-weight:bold; text-align:center; width:100%; margin-top:0px;">TREUILS HYDRAULIQUES</div>
-
-		<div id="Treuil_planetaire_Marque_1" class="posRel marginTop">
-			<div class="container" style="height:2em;">
-				<div class="fontTitle1 fontMono fl">Treuils à Réducteur Planétaire</div>
-				<div class="fontTitle2 fontMono" style="margin-top:0.8em; margin-left:1em;">(Livrés sans câble ni guide-câble)</div>  
-			</div>
-			<div class="container" style="padding-left:5em;">
-				<div class="fontBold marginLeft fl">HD-P:</div>
-				<div class="fl" id="img_HD-P" style="vertical-align:middle;"><img src="images/treuils_hydraulique/HD/HDP8_300.jpg"></div>
-				<div class="fontBold marginLeft fl">RPH:</div>
-				<div class="fl" id="img_RPH" style="vertical-align:middle;"><img src="images/treuils_hydraulique/rph45_170_titre.jpg" width="250px"></div>
-			</div>	
-			<div id="Tableau1"> 
-				<table class="table1">
-					<tr id="caracteristiques" class="bgTab1"> 
-						<th class="bgTab2" colspan="2" style="font-size:2em; border:2px solid black;">Caractéristiques</th>
-						<th>HD-P 34.9 Court</th>
-						<th>HD-P 34.9</th>
-						<th>RPH-42.2</th>
-						<th>RPH-53.3</th>
-						<th>RPH25</th>
-						<th>RPH-111.2</th>
-						<th>RPH-133.4</th>
-						<th>HD-P 177.9</th>
-					</tr>
-					<tr id="references" class="bgTab2"> 
-					<td class="bgTab1 label" rowspan="2">Référence</td>
-					<td class="bgTab1 label" style="border-right:2px solid black;">Crabotage manuel</td>
-					<td class="value">R123936</td>
-					<td class="value">R123933</td>
-				  </tr>
-					<tr id="crabotage_pneumatique" class="bgTab2">
-					<td class="bgTab1 label" style="border-right:2px solid black;">Crabotage pneumatique</td>
-				  </tr>
-					<tr id="force" class="bgTab2"> 
-					<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Force maximun de traction en 1 brin sur la 1er couche de câble</td>
-					<td class="value">3490 Kg</td>
-					<td class="value">3490 Kg</td>
-					<td class="value">4220 Kg</td>
-					<td class="value">5330 Kg</td>
-					<td class="value">11 T</td>
-					<td class="value">11.3 T</td>
-					<td class="value">13,6 T</td>
-					<td class="value">18.140 T</td>
-				  </tr>
-					<tr id="demultiplication" class="bgTab2"> 
-					<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Réducteur de type planétaire Rapport</td>
-					<td class="value">1/5.1</td>
-					<td class="value">1/5.1</td>
-					<td class="value">1/5.1</td>
-					<td class="value">1/7.7</td>
-					<td class="value">1/25</td>
-					<td class="value">1/31.89</td>
-					<td class="value">1/31.89</td>
-					<td class="value">1/51.35</td>
-				  </tr>
-					<tr id="pression" class="bgTab2"> 
-					<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Pression de service en bars</td>
-					<td class="value">170</td>
-					<td class="value">170</td>
-					<td></td>
-					<td class="value">172.4</td>
-					<td class="value">210</td>
-					<td></td>
-					<td class="value">207</td>
-					<td class="value">193</td>
-				  </tr>
-					<tr id="debit" class="bgTab2"> 
-					<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Débit maximun en L/mn</td>
-					<td class="value">55</td>
-					<td class="value">55</td>
-					<td class="value">56.7</td>
-					<td></td>
-					<td class="value">55</td>
-				  </tr>
-					<tr id="decrabotage_manuel" class="bgTab2"> 
-					<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Décrabotage manuel de la bobine</td>
-					<td class="value">Oui</td>
-					<td class="value">Oui</td>
-					<td class="value">Oui</td>
-					<td class="value">Oui</td>
-				  </tr>
-					<tr id="decrabotage_pneumatique" class="bgTab2"> 
-					<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Décrabotage pneumatique de la bobine</td>
-					<td class="value">Option</td>
-					<td class="value">Option</td>
-					<td class="value">Option</td>
-					<td class="value">Option</td>
-					<td class="value">Oui</td>
-					<td class="value">Oui</td>
-					<td class="value">Oui</td>
-					<td class="value">Oui</td>
-					</tr>
-					<tr id="capacite_tambour" class="bgTab2"> 
-					<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Capacité du tambour: Long, &oslash; du câble</td>
-						<td class="value">25m, &oslash; 10mm</td>
-						<td class="value">38m, &oslash; 10mm</td>
-						<td class="value">36m, &oslash; 10mm</td>
-						<td class="value">33m, &oslash; 13mm</td>
-						<td class="value">55m, &oslash; 16mm</td>
-						<td class="value">73m, &oslash; 16mm</td>
-					</tr>
-					<tr id="dimensions" class="bgTab2"> 
-						<td class="bgTab1 label" rowspan="4">Dimensions (mm)</td>
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">L:</td>
-						<td class="value">626</td>
-						<td class="value">708</td>
-						<td class="value">724.4</td>
-						<td class="value">751</td>
-						<td class="value">1047</td>
-					</tr>	
-					<tr id="l" class="bgTab2">
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">l:</td>
-						<td class="value">238</td>
-						<td class="value">238</td>
-						<td class="value">256.6</td>
-						<td class="value">321.5</td>
-						<td class="value">432</td>
-					</tr>
-					<tr id="h" class="bgTab2">
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">h:</td>
-						<td class="value">213</td>
-						<td class="value">213</td>
-						<td class="value">228.6</td>
-						<td class="value">-</td>
-						<td class="value">333</td>
-					</tr>
-					<tr id="p" class="bgTab2"> 
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">p:</td>
-						<td class="value">34 Kg</td>
-						<td class="value">37.6 Kg</td>
-						<td class="value">49.9 Kg</td>
-						<td class="value">131 Kg</td>
-						<td class="value">172 Kg</td>
-						<td class="value">261 Kg</td>
-						<td class="value">261 Kg</td>
-						<td class="value">337 Kg</td>
-					</tr>
-					<tr id="options" class="bgTab2"> 
-					<td class="bgTab1 label" rowspan="2">Options</td>
-					<td class="bgTab1 label" style="border-right:2px solid black;">Référence du câble</td>
-					<td class="value">832<br>Long.: 23m</td>
-					<td class="value">847<br>Long.: 30m</td>
-				  </tr>
-					<tr id="reference_guide-cable" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;">Référence du guide câble </td>
-						<td class="value"><a href="Guide_cable.htm">R274015</a></td>
-						<td class="value"><a href="Guide_cable.htm">2858</a></td>
-						<td class="value"><a href="Guide_cable.htm"></a></td>
-						<td class="value"><a href="Guide_cable.htm"></a></td>
-						<td class="value"><a href="Guide_cable.htm">R274010</a></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-
-		<div id="Treuil_planetaire_Marque_2" class="posRel marginTop"> 
-			<div class="container" style="padding-left:5em;">
-				<div class="fontBold marginLeft fl">EPH:</div>
-				<div class="fl" id="img_HD-P" style="vertical-align:middle;"><img style="width:400px;" src="images/treuils_hydraulique/EPH_6000FN_Av_400.jpg"></div>
-				<div class="fontBold marginLeft fl">EPH:</div>
-				<div class="fl" id="img_HD-P" style="vertical-align:middle;"><img style="width:400px;" src="images/treuils_hydraulique/EPH_6000FN_400.jpg"></div>
-			</div>
-			<div id='Tableau2'>
-				<table class="table1">
-					<tr id="caracteristiques" class="bgTab1">
-						<th class="bgTab2" colspan="2" style="font-size:2em; border:2px solid black;">Caractéristiques</th>
-						<th>EPH 3600 FN Court</th>
-						<th>EPH 3600 FN Long</th>
-						<th>EPH 4500 FN</th>
-						<th>EPH 6000 FN</th>
-						<th>EPH 6700 FN</th>
-						<th>EPHL 10000 FN</th>
-						<th>EPHL 12500 FN</th>
-					</tr>
-					<tr id="references" class="bgTab2"> 
-						<td class="bgTab1 label" rowspan="2">Référence</td>
-						<td class="bgTab1 label" style="border-right:2px solid black;">Crabotage manuel</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-					</tr>
-					<tr id="crabotage_pneumatique" class="bgTab2">
-						<td class="bgTab1 label" style="border-right:2px solid black;">Crabotage pneumatique</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-					</tr>
-					<tr id="force" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Force maximun de traction en 1 brin sur la 1er couche de câble</td>
-						<td class="value">3600 Kg</td>
-						<td class="value">3600 Kg</td>
-						<td class="value">4500 Kg</td>
-						<td class="value">6000 Kg</td>
-						<td class="value">6700 Kg</td>
-						<td class="value">10 T Kg</td>
-						<td class="value">12.5 T</td>
-					</tr>
-					<tr id="demultiplication" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Réducteur de type planétaire Rapport</td>
-						<td class="value">1/5.3</td>
-						<td class="value">1/5.3</td>
-						<td class="value">1/5.3</td>
-						<td class="value">1/5.3</td>
-						<td class="value">1/5.3</td>
-						<td class="value">1/22.69</td>
-						<td class="value">1/22.69</td>
-					</tr>
-					<tr id="pression" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Pression de service en bars</td>
-						<td class="value">160</td>
-						<td class="value">160</td>
-						<td class="value">150</td>
-						<td class="value">160</td>
-						<td class="value">160</td>
-						<td class="value">200</td>
-						<td class="value">200</td>
-					</tr>
-					<tr id="debit" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Débit maximun en L/mn</td>
-						<td class="value">60</td>
-						<td class="value">60</td>
-						<td class="value">60</td>
-						<td class="value">60</td>
-						<td class="value">60</td>
-						<td class="value">75</td>
-						<td class="value">75</td>
-					</tr>
-					<tr id="decrabotage_manuel" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Décrabotage manuel de la bobine</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-					</tr>
-					<tr id="decrabotage_pneumatique" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Décrabotage pneumatique de la bobine</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-					</tr>
-					<tr id="capacite_tambour" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Capacité du tambour: Long, &oslash; du câble</td>
-						<td class="value">35m, &oslash; 10mm</td>
-						<td class="value">45m, &oslash; 10mm</td>
-						<td class="value">30m, &oslash; 12mm</td>
-						<td class="value">30m, &oslash; 13mm</td>
-						<td class="value">39m, &oslash; 12mm</td>
-						<td class="value">84.8m, &oslash; 16mm</td>
-						<td class="value">78.1m, &oslash; 18mm</td>
-					</tr>
-					<tr id="dimensions" class="bgTab2"> 
-						<td class="bgTab1 label" rowspan="4">Dimensions (mm)</td>
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">L:</td>
-						<td class="value">638</td>
-						<td class="value">691</td>
-						<td class="value">700</td>
-						<td class="value">740</td>
-						<td class="value">750</td>
-						<td class="value">944</td>
-						<td class="value">951</td>
-					</tr>	
-					<tr id="l" class="bgTab2">
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">l:</td>
-						<td class="value">236</td>
-						<td class="value">236</td>
-						<td class="value">236</td>
-						<td class="value">235</td>
-						<td class="value">265</td>
-						<td class="value">364</td>
-						<td class="value">564</td>
-					</tr>
-					<tr id="h" class="bgTab2">
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">h:</td>
-						<td class="value">215</td>
-						<td class="value">215</td>
-						<td class="value">215</td>
-						<td class="value">240</td>
-						<td class="value">237</td>
-						<td class="value">421</td>
-						<td class="value">421</td>
-					</tr>
-					<tr id="p" class="bgTab2"> 
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">p:</td>
-						<td class="value">49 Kg</td>
-						<td class="value">50 Kg</td>
-						<td class="value">50 Kg</td>
-						<td class="value">54 Kg</td>
-						<td class="value">58 Kg</td>
-						<td class="value">200 Kg</td>
-						<td class="value">200 Kg</td>
-					</tr>
-					<tr id="options" class="bgTab2"> 
-					<td class="bgTab1 label" rowspan="2">Options</td>
-					<td class="bgTab1 label" style="border-right:2px solid black;">Référence du câble</td>
-					<td class="value">832<br>Long.: 23m</td>
-					<td class="value">847<br>Long.: 30m</td>
-					<td class="value">912<br>Long.: 25m</td>
-				  </tr>
-					<tr id="reference_guide-cable" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;">Référence du guide câble </td>
-						<td class="value"><a href="Guide_cable.htm">2866</a></td>
-						<td class="value"><a href="Guide_cable.htm">2855</a></td>
-						<td class="value"><a href="Guide_cable.htm">2855</a></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-
-		<div id="Treuil_planetaire_Marque_3" class="posRel marginTop">
-			<div class="container" style="padding-left:5em;">
-				<div class="fontBold marginLeft fl">Série: DP</div>
-				<div class="fl" id="img_DP" style="vertical-align:middle;">
-					<img style="width:226px;" src="images/treuils_hydraulique/DP15_226.jpg">
-					<img style="width:226px;" src="images/treuils_hydraulique/DP_226.jpg">
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<!-- Latest compiled and minified JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3"><img class='imgHeaderLogo' src='http://www.cev-treuil.com/current/skeleton/default/software__default/display__default/_as__askedPage/_data/logo.png'></div>
+				<div class='col-md-9'>
+					<h1><a href='http://www.cev-treuil.com/current/Index.php?path=/id__200100000000000000/content/rank__000000002__id__200300000000000000&software=default&display=default'>Treuils</a> | </h1>
+					<h1><a href='http://www.cev-treuil.com/current/Index.php?path=/id__200100000000000000/content/rank__000000001__id__200200000000000000&software=default&display=default'>Dépanneuses</a> | </h1>
+					<h1><a href='http://www.cev-treuil.com/current/Index.php?path=/id__200100000000000000/content/rank__000000001__id__200200000000000000&software=default&display=default'>Accessoires</a> | </h1>
+					<h1><a href='http://www.cev-treuil.com/current/Index.php?path=/id__200100000000000000/content/rank__000000003__id__200400000000000000&software=default&display=default'>Signalisation</a> | </h1>
+					<h1><a href='http://www.cev-treuil.com/cevam/'>Matériel de pose de câble</a></h1>
 				</div>
-				<div class="fontBold marginLeft fl">Série: HV</div>
-				<div class="fl" id="img_HV" style="vertical-align:middle;"><img style="width:226px;" src="images/treuils_hydraulique/HV/HV15000P_400.jpg"></div>
 			</div>
-		  	<div>
-				<table class="table1">
-					<tr id="caracteristiques" class="bgTab1">
-						<th class="bgTab2" colspan="2" style="font-size:2em; border:2px solid black;">Caractéristiques</th>
-						<th>12 J</th>
-						<th>12 J Tambour spécial</th>
-						<th>15 J</th>
-						<th>20 J</th>
-						<th>HV 12</th>
-						<th>HV 15</th>
-					</tr>
-					<tr id="references" class="bgTab2"> 
-						<td class="bgTab1 label" rowspan="2">Référence</td>
-						<td class="bgTab1 label" style="border-right:2px solid black;">Crabotage manuel</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-					</tr>
-					<tr id="crabotage_pneumatique" class="bgTab2">
-						<td class="bgTab1 label" style="border-right:2px solid black;">Crabotage pneumatique</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-					</tr>
-					<tr id="force" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Force maximun de traction en 1 brin sur la 1er couche de câble</td>
-						<td class="value">5400 Kg</td>
-						<td class="value">5400 Kg</td>
-						<td class="value">6800 Kg</td>
-						<td class="value">9000 Kg</td>
-						<td class="value">5400 Kg</td>
-						<td class="value">6800 Kg</td>
-					</tr>
-					<tr id="demultiplication" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Réducteur de type planétaire Rapport</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">-</td>
-						<td class="value">1/19.4</td>
-						<td class="value">1/19.4</td>
-					</tr>
-					<tr id="pression" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Pression de service en bars</td>
-						<td class="value">150</td>
-						<td class="value">150</td>
-						<td class="value">165</td>
-						<td class="value">170</td>
-						<td class="value">140</td>
-						<td class="value">140</td>
-					</tr>
-					<tr id="debit" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Débit maximun en L/mn</td>
-						<td class="value">75</td>
-						<td class="value">75</td>
-						<td class="value">95</td>
-						<td class="value">95</td>
-						<td class="value">60</td>
-						<td class="value">60</td>
-					</tr>
-					<tr id="decrabotage_manuel" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Décrabotage manuel de la bobine</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-						<td class="value">Oui</td>
-					</tr>
-					<tr id="decrabotage_pneumatique" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Décrabotage pneumatique de la bobine</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-						<td class="value">Option</td>
-					</tr>
-					<tr id="capacite_tambour" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;" colspan="2">Capacité du tambour: Long, &oslash; du câble</td>
-						<td class="value">40m, &oslash; 11mm</td>
-						<td class="value">80m, &oslash; 12mm</td>
-						<td class="value">65m, &oslash; 15mm</td>
-						<td class="value">60m, &oslash; 16mm</td>
-						<td class="value">40m, &oslash; 12mm</td>
-						<td class="value">27m, &oslash; 14mm</td>
-					</tr>
-					<tr id="dimensions" class="bgTab2"> 
-						<td class="bgTab1 label" rowspan="4">Dimensions (mm)</td>
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">L:</td>
-						<td class="value">614</td>
-						<td class="value">782</td>
-						<td class="value">865</td>
-						<td class="value">870</td>
-						<td class="value">684</td>
-						<td class="value">684</td>
-					</tr>	
-					<tr id="l" class="bgTab2">
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">l:</td>
-						<td class="value">281</td>
-						<td class="value">281</td>
-						<td class="value">359</td>
-						<td class="value">359</td>
-						<td class="value">289</td>
-						<td class="value">289</td>
-					</tr>
-					<tr id="h" class="bgTab2">
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">h:</td>
-						<td class="value">257</td>
-						<td class="value">257</td>
-						<td class="value">329</td>
-						<td class="value">329</td>
-						<td class="value">276</td>
-						<td class="value">276</td>
-					</tr>
-					<tr id="p" class="bgTab2"> 
-						<td class="bgTab1 label" style="text-align:right; border-right:2px solid black;">p:</td>
-						<td class="value">86 Kg</td>
-						<td class="value">-- Kg</td>
-						<td class="value">265 Kg</td>
-						<td class="value">270 Kg</td>
-						<td class="value">71 Kg</td>
-						<td class="value">72 Kg</td>
-					</tr>
-					<tr id="options" class="bgTab2"> 
-					<td class="bgTab1 label" rowspan="2">Options</td>
-					<td class="bgTab1 label" style="border-right:2px solid black;">Référence du câble</td>
-					<td class="value">810<br>Long.: 30m</td>
-					<td class="value">-<br>Long.: -m</td>
-					<td class="value">840<br>Long.: 60m</td>
-					<td class="value">855<br>Long.: 40m</td>
-					<td class="value">914<br>Long.: 40m</td>
-					<td class="value">834<br>Long.: 25m</td>
-				  </tr>
-					<tr id="reference_guide-cable" class="bgTab2"> 
-						<td class="bgTab1 label" style="border-right:2px solid black;">Référence du guide câble </td>
-						<td class="value"><a href="Guide_cable.htm">2872</a></td>
-						<td class="value"><a href="Guide_cable.htm">-</a></td>
-						<td class="value"><a href="Guide_cable.htm">-</a></td>
-						<td class="value"><a href="Guide_cable.htm">-</a></td>
-						<td class="value"><a href="Guide_cable.htm">-</a></td>
-						<td class="value"><a href="Guide_cable.htm">-</a></td>
-					</tr>
-				</table>
-		  	</div>
-		</div>
-		
-		<div id="Treuil_vis-sans-fin" class="posRel" style="margin-top:5em;"> 
-			<div class="container" style="height:2em;">
-				<div class="fontTitle1 fontMono fl">Treuils à réducteur à Vis sans fin</div>
-				<div class="fontTitle2 fontMono" style="margin-top:0.8em; margin-left:1em;">(Livrés sans câble ni guide-câble)</div>  
+			<div class='row borderTop bgLightBlue marginBottom'>
+				<div class='col-md-3 textCenter'><h4 class='noWrap'><a href='http://www.cev-treuil.com/current/Index.php?path=/id__200100000000000000/content/id__999000000000000001&software=default&display=default'>Cev les treuils et les dépanneuses</a></h4></div>
+				<div class='col-md-3 textCenter'><h4 class='noWrap'><a href='http://www.cev-treuil.com/cev/actualite.htm'>Actualités</a></h4></div>
+				<div class='col-md-3 textCenter'><h4 class='noWrap'><a href='http://cev-treuil.com/current/Index.php?path=/id__200100000000000000/content/id__555555555555555555'>Offre d'emploi</a></h4></div>
+				<div class='col-md-3 textCenter'><h4 class='noWrap'><a href='http://www.cev-treuil.com/cev/formulaire.html'>Contactez-nous</a></h4></div>
 			</div>
-		  <div style="padding-left:5em;">
-			<img src="images/treuils_hydraulique/num_jh50_170p_titre.jpg" width="170" height="136">
-			<img src="images/treuils_hydraulique/num_wh500_170p_titre1.jpg" width="170" height="96">
-			MSH:<img src="images/treuils_hydraulique/msh_300.jpg" width="240" height="156">
-		  </div>
-		  <div id="Layer18" style="position:absolute; width:1228px; height:397px; z-index:7; left: 4px; top: 230px"> 
-			<table cellspacing="0" bordercolordark="1" cellpadding="1" border="5" width="100%">
+			<div class="row">
+				<div class="row"><div class='col-md-12'><h3 class="fontBold fontBlue">Treuils hydrauliques de halage</h3></div></div>
+				<div class="row marginBottom"><div class='col-md-12'><p>Pour d&eacute;panneuses, poids lourds et l'industrie.</p></div></div>
+			</div>
+			<!--Treuils à réducteur planétaire-->
+			<div class="row">
+				<div class="row"><div class='col-md-12'><h3 class='fontBold fontBlue fontMono'>Treuils à Réducteur Planétaire </h3> (Livrés sans câble ni guide-câble)</div></div>
+				<div class="row">
+					<div class='col-md-6 fontMax'>HD-P: <img src="images/treuils_hydraulique/HD/HDP8_300.jpg"></div>
+					<div class='col-md-6 fontMax'>RPH: <img src='images/treuils_hydraulique/rph45_170_titre.jpg'></div>
+				</div>
+				<div class="row"><div class="col-md-12">
+					<table class="table1">
+						<tr id="caracteristiques" class="bgTab1"> 
+							<th class="bgTab2 fontTitle3" colspan="2" style="border:2px solid black;">Caractéristiques</th>
+							<th>HD-P 34.9 Court</th>
+							<th>HD-P 34.9</th>
+							<th>RPH-42.2</th>
+							<th>RPH-53.3</th>
+							<th>RPH25</th>
+							<th>RPH-111.2</th>
+							<th>RPH-133.4</th>
+							<th>HD-P 177.9</th>
+						</tr>
+						<tr id="references" class="bgTab2"> 
+							<td class="bgTab1" rowspan="2">Référence</td>
+							<td class="bgTab1" style="border-right:2px solid black;">Crabotage manuel</td>
+							<td class="value">R123936</td>
+							<td class="value">R123933</td>
+						</tr>
+						<tr id="crabotage_pneumatique" class="bgTab2">
+							<td class="bgTab1" style="border-right:2px solid black;">Crabotage pneumatique</td>
+						</tr>
+						<tr id="force" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Force maximun de traction en 1 brin sur la 1er couche de câble</td>
+							<td class="value">3490 Kg</td>
+							<td class="value">3490 Kg</td>
+							<td class="value">4220 Kg</td>
+							<td class="value">5330 Kg</td>
+							<td class="value">11 T</td>
+							<td class="value">11.3 T</td>
+							<td class="value">13,6 T</td>
+							<td class="value">18.140 T</td>
+						</tr>
+						<tr id="demultiplication" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Réducteur de type planétaire Rapport</td>
+							<td class="value">1/5.1</td>
+							<td class="value">1/5.1</td>
+							<td class="value">1/5.1</td>
+							<td class="value">1/7.7</td>
+							<td class="value">1/25</td>
+							<td class="value">1/31.89</td>
+							<td class="value">1/31.89</td>
+							<td class="value">1/51.35</td>
+						</tr>
+						<tr id="pression" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Pression de service en bars</td>
+							<td class="value">170</td>
+							<td class="value">170</td>
+							<td></td>
+							<td class="value">172.4</td>
+							<td class="value">210</td>
+							<td></td>
+							<td class="value">207</td>
+							<td class="value">193</td>
+						</tr>
+						<tr id="debit" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Débit maximun en L/mn</td>
+							<td class="value">55</td>
+							<td class="value">55</td>
+							<td class="value">56.7</td>
+							<td></td>
+							<td class="value">55</td>
+						</tr>
+						<tr id="decrabotage_manuel" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Décrabotage manuel de la bobine</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+						</tr>
+						<tr id="decrabotage_pneumatique" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Décrabotage pneumatique de la bobine</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+						</tr>
+						<tr id="capacite_tambour" class="bgTab2"> 
+						<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Capacité du tambour: Long, &oslash; du câble</td>
+							<td class="value">25m, &oslash; 10mm</td>
+							<td class="value">38m, &oslash; 10mm</td>
+							<td class="value">36m, &oslash; 10mm</td>
+							<td class="value">33m, &oslash; 13mm</td>
+							<td class="value">55m, &oslash; 16mm</td>
+							<td class="value">73m, &oslash; 16mm</td>
+						</tr>
+						<tr id="dimensions" class="bgTab2"> 
+							<td class="bgTab1" rowspan="4">Dimensions (mm)</td>
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">L:</td>
+							<td class="value">626</td>
+							<td class="value">708</td>
+							<td class="value">724.4</td>
+							<td class="value">751</td>
+							<td class="value">1047</td>
+						</tr>	
+						<tr id="l" class="bgTab2">
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">l:</td>
+							<td class="value">238</td>
+							<td class="value">238</td>
+							<td class="value">256.6</td>
+							<td class="value">321.5</td>
+							<td class="value">432</td>
+						</tr>
+						<tr id="h" class="bgTab2">
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">h:</td>
+							<td class="value">213</td>
+							<td class="value">213</td>
+							<td class="value">228.6</td>
+							<td class="value">-</td>
+							<td class="value">333</td>
+						</tr>
+						<tr id="p" class="bgTab2"> 
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">p:</td>
+							<td class="value">34 Kg</td>
+							<td class="value">37.6 Kg</td>
+							<td class="value">49.9 Kg</td>
+							<td class="value">131 Kg</td>
+							<td class="value">172 Kg</td>
+							<td class="value">261 Kg</td>
+							<td class="value">261 Kg</td>
+							<td class="value">337 Kg</td>
+						</tr>
+							<tr id="options" class="bgTab2"> 
+							<td class="bgTab1" rowspan="2">Options</td>
+							<td class="bgTab1" style="border-right:2px solid black;">Référence du câble</td>
+							<td class="value">832<br>Long.: 23m</td>
+							<td class="value">847<br>Long.: 30m</td>
+						</tr>
+						<tr id="reference_guide-cable" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;">Référence du guide câble </td>
+							<td class="value"><a href="Guide_cable.htm">R274015</a></td>
+							<td class="value"><a href="Guide_cable.htm">2858</a></td>
+							<td class="value"><a href="Guide_cable.htm"></a></td>
+							<td class="value"><a href="Guide_cable.htm"></a></td>
+							<td class="value"><a href="Guide_cable.htm">R274010</a></td>
+						</tr>
+					</table>
+				</div></div>
+			</div>
+
+			<!--Treuils à réducteur planétaire 2ème tableau-->
+			<div class="row">
+				<div class="row">
+					<div class='col-md-2 fontMax'>EPH: </div>
+					<div class='col-md-3 fontMax'><img src='images/treuils_hydraulique/EPH_6000FN_Av_400.jpg'></div>
+					<div class='col-md-3 fontMax'><img src='images/treuils_hydraulique/EPH_6000FN_400.jpg'></div>
+					<div class='col-md-3 fontMax'><img src='images/treuils_hydraulique/treuil_hydraulique_EPH15000FN.jpg'></div>
+				</div>
+				<div class="row"><div class="col-md-12">
+					<table class="table1">
+						<tr id="caracteristiques" class="bgTab1">
+							<th class="bgTab2 fontTitle3" colspan="2" style="border:2px solid black;">Caractéristiques</th>
+							<th>EPH 3600 FN Court</th>
+							<th>EPH 3600 FN Long</th>
+							<th>EPH 4500 FN</th>
+							<th>EPH 6000 FN</th>
+							<th>EPH 6700 FN</th>
+							<th>EPHL 10000 FN</th>
+							<th>EPHL 12500 FN</th>
+							<th>EPHL 15000 FN</th>
+							<th>EPHL 16500 FN</th>
+						</tr>
+						<tr id="references" class="bgTab2"> 
+							<td class="bgTab1" rowspan="2">Référence</td>
+							<td class="bgTab1" style="border-right:2px solid black;">Crabotage manuel</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+						</tr>
+						<tr id="crabotage_pneumatique" class="bgTab2">
+							<td class="bgTab1" style="border-right:2px solid black;">Crabotage pneumatique</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+						</tr>
+						<tr id="force" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Force maximun de traction en 1 brin sur la 1er couche de câble</td>
+							<td class="value">3600 Kg</td>
+							<td class="value">3600 Kg</td>
+							<td class="value">4500 Kg</td>
+							<td class="value">6000 Kg</td>
+							<td class="value">6700 Kg</td>
+							<td class="value">10 T Kg</td>
+							<td class="value">12.5 T</td>
+							<td class="value">15 T</td>
+							<td class="value">16.5 T</td>
+						</tr>
+						<tr id="demultiplication" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Réducteur de type planétaire Rapport</td>
+							<td class="value">1/5.3</td>
+							<td class="value">1/5.3</td>
+							<td class="value">1/5.3</td>
+							<td class="value">1/5.3</td>
+							<td class="value">1/5.3</td>
+							<td class="value">1/22.69</td>
+							<td class="value">1/22.69</td>
+							<td class="value">1/22.69</td>
+							<td class="value">1/22.69</td>
+						</tr>
+						<tr id="pression" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Pression de service en bars</td>
+							<td class="value">160</td>
+							<td class="value">160</td>
+							<td class="value">150</td>
+							<td class="value">160</td>
+							<td class="value">160</td>
+							<td class="value">200</td>
+							<td class="value">200</td>
+						</tr>
+						<tr id="debit" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Débit maximun en L/mn</td>
+							<td class="value">60</td>
+							<td class="value">60</td>
+							<td class="value">60</td>
+							<td class="value">60</td>
+							<td class="value">60</td>
+							<td class="value">75</td>
+							<td class="value">75</td>
+						</tr>
+						<tr id="decrabotage_manuel" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Décrabotage manuel de la bobine</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+						</tr>
+						<tr id="decrabotage_pneumatique" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Décrabotage pneumatique de la bobine</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+						</tr>
+						<tr id="capacite_tambour" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Capacité du tambour: Long, &oslash; du câble</td>
+							<td class="value">35m, &oslash; 10mm</td>
+							<td class="value">45m, &oslash; 10mm</td>
+							<td class="value">30m, &oslash; 12mm</td>
+							<td class="value">30m, &oslash; 13mm</td>
+							<td class="value">39m, &oslash; 12mm</td>
+							<td class="value">84.8m, &oslash; 16mm</td>
+							<td class="value">78.1m, &oslash; 18mm</td>
+							<td class="value">78.1m, &oslash; 18mm</td>
+							<td class="value">78.1m, &oslash; 18mm</td>
+						</tr>
+						<tr id="dimensions" class="bgTab2"> 
+							<td class="bgTab1" rowspan="4">Dimensions (mm)</td>
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">L:</td>
+							<td class="value">638</td>
+							<td class="value">691</td>
+							<td class="value">700</td>
+							<td class="value">740</td>
+							<td class="value">750</td>
+							<td class="value">944</td>
+							<td class="value">951</td>
+							<td class="value">960</td>
+							<td class="value">971</td>
+						</tr>	
+						<tr id="l" class="bgTab2">
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">l:</td>
+							<td class="value">236</td>
+							<td class="value">236</td>
+							<td class="value">236</td>
+							<td class="value">235</td>
+							<td class="value">265</td>
+							<td class="value">364</td>
+							<td class="value">564</td>
+							<td class="value">571</td>
+							<td class="value">571</td>
+						</tr>
+						<tr id="h" class="bgTab2">
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">h:</td>
+							<td class="value">215</td>
+							<td class="value">215</td>
+							<td class="value">215</td>
+							<td class="value">240</td>
+							<td class="value">237</td>
+							<td class="value">421</td>
+							<td class="value">421</td>
+							<td class="value">420</td>
+							<td class="value">420</td>
+						</tr>
+						<tr id="p" class="bgTab2"> 
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">p:</td>
+							<td class="value">49 Kg</td>
+							<td class="value">50 Kg</td>
+							<td class="value">50 Kg</td>
+							<td class="value">54 Kg</td>
+							<td class="value">58 Kg</td>
+							<td class="value">200 Kg</td>
+							<td class="value">200 Kg</td>
+							<td class="value">210 Kg</td>
+							<td class="value">210 Kg</td>
+						</tr>
+						<tr id="options" class="bgTab2"> 
+						<td class="bgTab1" rowspan="2">Options</td>
+						<td class="bgTab1" style="border-right:2px solid black;">Référence du câble</td>
+						<td class="value">832<br>Long.: 23m</td>
+						<td class="value">847<br>Long.: 30m</td>
+						<td class="value">912<br>Long.: 25m</td>
+					  </tr>
+						<tr id="reference_guide-cable" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;">Référence du guide câble </td>
+							<td class="value"><a href="Guide_cable.htm">2866</a></td>
+							<td class="value"><a href="Guide_cable.htm">2855</a></td>
+							<td class="value"><a href="Guide_cable.htm">2855</a></td>
+						</tr>
+					</table>
+				</div></div>
+			</div>
+
+			<!--Treuils à réducteur planétaire 3ème tableau-->
+			<div class="row marginBottom">
+				<div class="row">
+					<div class='col-md-2 fontMax'>DP: </div>
+					<div class='col-md-2 fontMax'><img src='images/treuils_hydraulique/DP15_226.jpg'></div>
+					<div class='col-md-2 fontMax'><img src='images/treuils_hydraulique/DP_226.jpg'></div>
+					<div class='col-md-2 fontMax'>HV: </div>
+					<div class='col-md-2 fontMax'><img src='images/treuils_hydraulique/HV/HV15000P_400.jpg'></div>
+				</div>
+				<div class="row"><div class="col-md-12">
+					<table class="table1">
+						<tr id="caracteristiques" class="bgTab1">
+							<th class="bgTab2 fontTitle3" colspan="2" style="border:2px solid black;">Caractéristiques</th>
+							<th>12 J</th>
+							<th>12 J Tambour spécial</th>
+							<th>15 J</th>
+							<th>20 J</th>
+							<th>HV 12</th>
+							<th>HV 15</th>
+						</tr>
+						<tr id="references" class="bgTab2"> 
+							<td class="bgTab1" rowspan="2">Référence</td>
+							<td class="bgTab1" style="border-right:2px solid black;">Crabotage manuel</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+						</tr>
+						<tr id="crabotage_pneumatique" class="bgTab2">
+							<td class="bgTab1" style="border-right:2px solid black;">Crabotage pneumatique</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+						</tr>
+						<tr id="force" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Force maximun de traction en 1 brin sur la 1er couche de câble</td>
+							<td class="value">5400 Kg</td>
+							<td class="value">5400 Kg</td>
+							<td class="value">6800 Kg</td>
+							<td class="value">9000 Kg</td>
+							<td class="value">5400 Kg</td>
+							<td class="value">6800 Kg</td>
+						</tr>
+						<tr id="demultiplication" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Réducteur de type planétaire Rapport</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">-</td>
+							<td class="value">1/19.4</td>
+							<td class="value">1/19.4</td>
+						</tr>
+						<tr id="pression" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Pression de service en bars</td>
+							<td class="value">150</td>
+							<td class="value">150</td>
+							<td class="value">165</td>
+							<td class="value">170</td>
+							<td class="value">140</td>
+							<td class="value">140</td>
+						</tr>
+						<tr id="debit" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Débit maximun en L/mn</td>
+							<td class="value">75</td>
+							<td class="value">75</td>
+							<td class="value">95</td>
+							<td class="value">95</td>
+							<td class="value">60</td>
+							<td class="value">60</td>
+						</tr>
+						<tr id="decrabotage_manuel" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Décrabotage manuel de la bobine</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+							<td class="value">Oui</td>
+						</tr>
+						<tr id="decrabotage_pneumatique" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Décrabotage pneumatique de la bobine</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+							<td class="value">Option</td>
+						</tr>
+						<tr id="capacite_tambour" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;" colspan="2">Capacité du tambour: Long, &oslash; du câble</td>
+							<td class="value">40m, &oslash; 11mm</td>
+							<td class="value">80m, &oslash; 12mm</td>
+							<td class="value">65m, &oslash; 15mm</td>
+							<td class="value">60m, &oslash; 16mm</td>
+							<td class="value">40m, &oslash; 12mm</td>
+							<td class="value">27m, &oslash; 14mm</td>
+						</tr>
+						<tr id="dimensions" class="bgTab2"> 
+							<td class="bgTab1" rowspan="4">Dimensions (mm)</td>
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">L:</td>
+							<td class="value">614</td>
+							<td class="value">782</td>
+							<td class="value">865</td>
+							<td class="value">870</td>
+							<td class="value">684</td>
+							<td class="value">684</td>
+						</tr>	
+						<tr id="l" class="bgTab2">
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">l:</td>
+							<td class="value">281</td>
+							<td class="value">281</td>
+							<td class="value">359</td>
+							<td class="value">359</td>
+							<td class="value">289</td>
+							<td class="value">289</td>
+						</tr>
+						<tr id="h" class="bgTab2">
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">h:</td>
+							<td class="value">257</td>
+							<td class="value">257</td>
+							<td class="value">329</td>
+							<td class="value">329</td>
+							<td class="value">276</td>
+							<td class="value">276</td>
+						</tr>
+						<tr id="p" class="bgTab2"> 
+							<td class="bgTab1" style="text-align:right; border-right:2px solid black;">p:</td>
+							<td class="value">86 Kg</td>
+							<td class="value">-- Kg</td>
+							<td class="value">265 Kg</td>
+							<td class="value">270 Kg</td>
+							<td class="value">71 Kg</td>
+							<td class="value">72 Kg</td>
+						</tr>
+						<tr id="options" class="bgTab2"> 
+						<td class="bgTab1" rowspan="2">Options</td>
+						<td class="bgTab1" style="border-right:2px solid black;">Référence du câble</td>
+						<td class="value">810<br>Long.: 30m</td>
+						<td class="value">-<br>Long.: -m</td>
+						<td class="value">840<br>Long.: 60m</td>
+						<td class="value">855<br>Long.: 40m</td>
+						<td class="value">914<br>Long.: 40m</td>
+						<td class="value">834<br>Long.: 25m</td>
+					  </tr>
+						<tr id="reference_guide-cable" class="bgTab2"> 
+							<td class="bgTab1" style="border-right:2px solid black;">Référence du guide câble </td>
+							<td class="value"><a href="Guide_cable.htm">2872</a></td>
+							<td class="value"><a href="Guide_cable.htm">-</a></td>
+							<td class="value"><a href="Guide_cable.htm">-</a></td>
+							<td class="value"><a href="Guide_cable.htm">-</a></td>
+							<td class="value"><a href="Guide_cable.htm">-</a></td>
+							<td class="value"><a href="Guide_cable.htm">-</a></td>
+						</tr>
+					</table>
+				</div></div>
+			</div>
+
+			<!--Treuils à vis sans fin-->
+			<div class="row">
+				<div class="row"><div class='col-md-12'><h3 class='fontBold fontBlue fontMono'>Treuils à Réducteur à vis sans fin </h3> (Livrés sans câble ni guide-câble)</div></div>
+				<div class="row">
+					<div class='col-md-6 fontMax'>MSH: <img src='images/treuils_hydraulique/msh_300.jpg'></div>
+					<div class='col-md-6 fontMax'><img src='images/treuils_hydraulique/num_jh50_170p_titre.jpg'><img src='images/treuils_hydraulique/num_wh500_170p_titre1.jpg'></div>
+				</div>
+				<div class="row"><div class="col-md-12">
+					<table cellspacing="0" bordercolordark="1" cellpadding="1" border="5" width="100%">
 			  <tr> 
 				<td bgcolor="#CCCCFF" height="79" colspan="2"> 
 				  <div align="center"><font size="4">Caract&eacute;ristiques</font></div>
@@ -1390,8 +1414,9 @@
 				</td>
 			  </tr>
 			</table>
-		  </div>
-		</div>
-
-</body>
+				</div></div>
+			</div>
+		</div><!-- END Container -->
+		
+	</body>
 </html>

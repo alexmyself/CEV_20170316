@@ -25,6 +25,7 @@ abstract class metaSoftware{
 
 function softwareHandler($commandsArr){
 	$className='software__'.$commandsArr['software'];
+echo "\nHERE!!! ---".$className.__FILE__;
 	$obj = new $className($commandsArr);
 	$result= $obj->result;
 	unset($obj);
