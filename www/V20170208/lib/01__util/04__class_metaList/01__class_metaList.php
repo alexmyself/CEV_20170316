@@ -53,7 +53,10 @@ class metaList{
 		#Check if datas have been already launched in global scope
 		$alreadyDone=false;
 		if($this->container!='' && is_array($GLOBALS['itemsData'][$this->container])){$alreadyDone = iAlreadyExists($this->id, $GLOBALS['itemsData'][$this->container]);}
-		if($alreadyDone!==false){return false;}
+		if($alreadyDone!==false){
+			foreach ($alreadyDone as $srcName => $content) {$this->$srcName=$content;}
+			return false;
+		}
 
 		$this->data['path']=$this->path; #Add path arg to the item's datas
 
@@ -64,14 +67,8 @@ class metaList{
 		#Set exclude words arr for path finding in lineage
 		$this->excludeFromSearch= array();
 		if($this->isAskedItem==false){$this->excludeFromSearch[]='_as__askedPage';}
-/*
-if($this->id == 000000000000000001){
-	echo "\nFILE::::".__FILE__;
-	echo "\ngetParams::\n";
-	var_dump($GLOBALS['urlParamsAsked']);
-}
-*/
-		#get the datas values
+
+		#get the datas values and a lastmod YYYY-MM-DD property.
 		$itemPath = $GLOBALS['PATHS']['stock'].DIRECTORY_SEPARATOR.$this->data['id'].DIRECTORY_SEPARATOR;
 		foreach($this->dataSrc as $srcName){ $this->lineage('_'.$srcName, $itemPath, $this->$srcName, $this->excludeFromSearch); }
 
@@ -81,11 +78,6 @@ if($this->id == 000000000000000001){
 		if(is_dir($skeletonPath)){$this->microSkelFunc($skeletonPath);}
 		$skeletonPath = $GLOBALS['PATHS']['skeletonDefault'.$this->data['type']].DIRECTORY_SEPARATOR;
 		if(is_dir($skeletonPath)){$this->microSkelFunc($skeletonPath);}
-
-//echo "\n\n Site item, datas should be presents:\n";
-//echo "\n";
-//die("\nHALTED IN::::".__FILE__);
-
 
 		#Case item is the asked one, overwrite values once again with datas from _as__askedPage dirs:
 		if( $this->isAskedItem && (count($this->as__askedPage)>0) ){
@@ -106,7 +98,7 @@ if($this->id == 000000000000000001){
 
 		#Create a html link property.
 		#Only if there is none already found in one of the data dirs (case for external link).
-		if (!array_key_exists('htmlLink', $this->data)){ $this->data['htmlLink']=$GLOBALS['PATHS']['httpMotorIndex'].htmlQueryRebuild(['datas'=>$this->data]); }
+		if (!array_key_exists('htmlLink', $this->data)){ $this->data['htmlLink']=$GLOBALS['PATHS']['httpMotorIndex'].'?'.htmlspecialchars(htmlQueryRebuild(['datas'=>$this->data]) ); }
 
 		#add data to navigation array if needed.
 		if($this->isAskedItem==true){ 
@@ -118,7 +110,7 @@ if($this->id == 000000000000000001){
 
 	function properties(){
 		$result=array();
-		foreach ($this->dataSrc as $key => $value) { $result[$value]=$this->$value; }
+		foreach ($this->dataSrc as $value) { $result[$value]=$this->$value; }
 		return $result;
 	}
 
@@ -143,17 +135,16 @@ if($this->id == 000000000000000001){
 	# 	$originalDatasArr 	: this->datas 			Pointer to actuals datas we want to update.
 	#	$excludeArr			: ['word1', 'wordX'] 	remove path wich contains those words
 	function lineage($targetDirName, $argPath, &$originalDatasArr, $excludeArr){
-		#get less specialized datas: (/stock/anId/_[data|model] or /skeleton/itemType/__[data|model]), to have some default values loaded.
-//echo "\nLineage looking for:".$targetDirName."  in dir:: ".$argPath;
-		getAndMerge($argPath.$targetDirName, $originalDatasArr);
-//echo "\n\tFirst merge from root:\t".$argPath.$targetDirName;
+		#Get less specialized datas: (/stock/anId/_[data|model] or /skeleton/itemType/__[data|model]), to have some default values loaded.
+		//But only if it's not a skeleton dir (the path here is not taken in account in the scorring process, and is applied directly to pointed array)
+		if(preg_match('~'.preg_quote($GLOBALS['PATHS']['skeleton']).'~', $argPath)!=1){getAndMerge($argPath.$targetDirName, $originalDatasArr);}
+		
 		#Build lineage, the array from path of specifications to look for.
 		#Chech if lineage has already been built.
 
 		#Find the most accurate datas, those from closest dir in the obj/_[data | model |...]/.../ than the one from lineage (parents specifications).
 		#Ranking paths and related datas then apply everything from least to most accurate path.
 		#Values "default" (the less specialized) datas in /stock/id/_[data | model...] have already been merged at the begining of lineage function.
-		#Exists $GLOBALS['dataRoutingPrefix'] array in /conf/dataRoutingPrefix
 
 
 //Est disqualifiant: -une mauvaise valeur.
@@ -195,7 +186,7 @@ if($this->id == 000000000000000001){
 				$dirCleaned = preg_replace('~'.preg_quote($argPath).'~', '', $dir); //Remove unneeded part
 				$dirMembers = explode(DIRECTORY_SEPARATOR, $dirCleaned); //Split by directory
 				$dirLength = count($dirMembers);
-				if($dirLength==1){continue;} //Skip process if only _data or something like is present (already launched).
+//				if($dirLength==1){continue;} //Skip process if only _data or something like is present (already launched).
 				if($dirLength > $maxLength){continue;} //Too deep.
 				//Checking dir members names validity
 				$flagBadDir=false;

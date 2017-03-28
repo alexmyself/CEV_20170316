@@ -9,7 +9,5 @@ $GLOBALS['itemsData']['site'][$objSite->data['id']]=$objSite->properties();
 unset($objSite);
 
 //Launch class to fill $GLOBALS['itemsData']['containerNameX,Y,Z..']['anIdX,Y,Z...']['datas']
-
 softwareHandler( htmlQueryToArray(htmlQueryRebuild()) );
-echo "\nVICTOIRE!!! ---".__FILE__;
 ?>

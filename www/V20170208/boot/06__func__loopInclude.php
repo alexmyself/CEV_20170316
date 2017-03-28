@@ -3,7 +3,7 @@
 #Prefix: string to use specific handler function name. Default prefix is 'handler' and function name is 'handler_[php|jpg|html|..]'
 #Return: != null to receive an eventual output from ran functions.
 function loopInclude($path, $prefix = null, $return = null){
-//echo "\nloopInclude diving in: ".$path;
+//echo "\n\nloopInclude diving in: ".$path;
 	if($prefix == null){$prefix = 'handler';}
 	if( ($pathList= lister($path, 'all'))==false){return false;}
 	natSortArr($pathList);

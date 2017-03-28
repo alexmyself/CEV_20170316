@@ -14,7 +14,6 @@ class software__default extends metaSoftware{
 		$dirInfos= fs::dirNameInfos($GLOBALS['urlParams']['path']);
 		$treeDirName = 'id__'.$dirInfos['id'];
 		$contentPathFs = $GLOBALS['PATHS']['tree'].DIRECTORY_SEPARATOR.$treeDirName;									// /../motorRoot/tree + / + id__200200000
-
 		if(($containersPaths = lister($contentPathFs, 'dirs')) !== false){ 												// /../motorRoot/tree/id__200200000/ dirs
 			foreach($containersPaths as $containerPath){ 																// /../motorRoot/tree/id__200200000/content
 				$containerName=fs::pathLastPart($containerPath); 														// content

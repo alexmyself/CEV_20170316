@@ -6,7 +6,7 @@ class fs{
 
 	#Return an associative array with values from dir name, like id and rank.
 	static function dirNameInfos($path){
-		$arrInfos = explode('__', $path);
+		$arrInfos = explode('__', basename($path) );
 		$assocArrInfos=array();
 		if( count($arrInfos)==1 && strlen($arrInfos[0])==18 ){$assocArrInfos['id']=$arrInfos[0];}
 		elseif(count($arrInfos)==1){return false;}
@@ -14,38 +14,13 @@ class fs{
 		return $assocArrInfos;
 	}
 	
-	function findIdsByPropertyValue($property, $value){
-		$matchingIds = array();
-		$itemsList = lister($GLOBALS['PATHS']['stock'], 'dirs');
-		if($itemsList ==false){return false;}
-		foreach($itemsList as $itemPath){
-			$propertyFilesList = lister($itemPath, 'files');
-			if(in_array($itemPath.DIRECTORY_SEPARATOR.$property.'.txt', $propertyFilesList) &&
-				file_get_contents($itemPath.DIRECTORY_SEPARATOR.$property.'.txt')==$value){
-				$matchingIds[] = fs::pathLastPart($itemPath);
-				continue;
-			}
-		}
-		if(empty($matchingIds)){ return false;}
-		natcasesort($matchingIds);
-		return $matchingIds;
-	}
-
-	function getProperty($id, $propertyName){return file_get_contents($GLOBALS['PATHS']['stock'].DIRECTORY_SEPARATOR.$id.DIRECTORY_SEPARATOR.$propertyName.'.txt');}
-
+	//Return a http url corresponding to local fs path.
 	static function pathFsToHtml($path){
 		$httpPath = preg_replace('~'.preg_quote($GLOBALS['motorRoot']).'~','',$path);
 		$httpPath = preg_replace('~'.preg_quote(DIRECTORY_SEPARATOR).'~','/',$httpPath);
 		return $GLOBALS['PATHS']['httpMotorRoot'].'/'.$httpPath;
 	}
-/*
-	static function pathHtmlToFs($path){
-		$httpPath = preg_replace('/', DIRECTORY_SEPARATOR, $path);
-		$httpPath = $GLOBALS['motorRoot'].$httpPath);
-		
-		return $GLOBALS['PATHS']['httpMotorRoot'].'/'.$httpPath;
-	}
-*/	
+
 	static function pathLastPart($path, $removeExtension = null){
 		#remove trailing slash if any
 		$name = preg_replace('~'.preg_quote(DIRECTORY_SEPARATOR).'$~', '', $path);
@@ -82,6 +57,34 @@ class fs{
 		return $internalArr;
 	}
 
-	function create(){}
+	static function itemsTree(string $rootId, $targetOnly=false, string $previousPath=''): array{
+		$output 	= [];
+		$rootInfos 	= fs::dirNameInfos($rootId);
+		$rootFsPath = $GLOBALS['PATHS']['tree'].DIRECTORY_SEPARATOR.'id__'.$rootInfos['id'];
+		if($previousPath==''){
+			$previousPath='/id__'.$rootInfos['id'];
+			$output[]=$previousPath;
+		}
+		if( ($dirs = lister($rootFsPath, 'dirs')) === false){ return $output;}
+		if($targetOnly!==false && in_array($rootFsPath.DIRECTORY_SEPARATOR.$targetOnly, $dirs)===false ){return $output;}
+		if($targetOnly!==false){$dirs = [$rootFsPath.DIRECTORY_SEPARATOR.$targetOnly];}
+		foreach ($dirs as $containerPath) {
+			if(($containedItems = lister($containerPath, 'dirs'))===false){continue;}
+			$containerDir= fs::pathLastPart($containerPath);
+			foreach ($containedItems as $itemPath) {
+				$itemDir 	= fs::pathLastPart($itemPath);
+				$itemInfos 	= fs::dirNameInfos($itemDir);
+				$itemHtmlPath = $previousPath.'/'.$containerDir.'/'.$itemDir;
+				$output[]= $itemHtmlPath;
+				$output= array_merge($output, fs::itemsTree('id__'.$itemInfos['id'], $targetOnly, $itemHtmlPath) );
+			}
+		}
+		return $output;
+	}
+
+	static function lastMod(string $path): string{
+		if(preg_match('~'.preg_quote(DIRECTORY_SEPARATOR).'$~', $path)!=1){$path.=DIRECTORY_SEPARATOR;}
+		return date ("Y-m-d",  filemtime($path.'.'));
+	}
 }
 ?>

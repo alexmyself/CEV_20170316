@@ -23,42 +23,15 @@ abstract class metaSoftware{
 	}
 }
 
+
+
+
+
 function softwareHandler($commandsArr){
 	$className='software__'.$commandsArr['software'];
-echo "\nHERE!!! ---".$className.__FILE__;
 	$obj = new $className($commandsArr);
 	$result= $obj->result;
 	unset($obj);
 	return $result;
 }
-
-
-
-
-/*
-	
-	
-	function play(){
-		if( (class_exists($this->packOfData['software']))
-			&& (method_exists($this->packOfData['software'], $this->packOfData['command']))
-			){
-			$obj = new $this->packOfData['software']($this);
-			if($obj->okToRun == false){return false;}
-			$funcName = $this->packOfData['command'];
-			$return = $obj->$funcName();
-			unset($obj);
-			return $return;
-		}
-		return false;
-	}
-
-	function findIdsByPropertyValue($property, $value){
-		return fs::findIdsByPropertyValue($property, $value);
-	}
-	function getProperty($id, $propertyName){
-		return fs::getProperty($id, $propertyName);
-	}
-*/
-
-
 ?>

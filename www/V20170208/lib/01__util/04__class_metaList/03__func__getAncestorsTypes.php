@@ -22,10 +22,6 @@ function getAncestorsTypes($path){
 			unset($objy);
 		}
 	}
-/*	else{
-		$lineagePathOfTypes=$GLOBALS['lineageDefaultRoot'];
-		$lineageArrOfTypes=preg_split('~/~', $lineagePathOfTypes);
-	}
-*/	return $lineageArrOfTypes;
+	return $lineageArrOfTypes;
 }
 ?>
