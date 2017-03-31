@@ -1,0 +1,132 @@
+<div id="askedPage" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement" class='displaySwitch'>
+	<div style="display:none;">
+		<div itemprop="author" itemscope itemtype="http://schema.org/Organization">___organization___author___Start___ ___microdataModelOrganization___ ___organization___author___Stop___</div>
+		<div itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization">___organization___copyrightHolder___Start___ ___microdataModelOrganization___ ___organization___copyrightHolder___Stop___</div>
+		<div itemprop="provider" itemscope itemtype="http://schema.org/Organization">___organization___provider___Start___ ___microdataModelOrganization___ ___organization___provider___Stop___</div>
+		<div itemprop="about" itemscope itemtype="http://schema.org/Thing">
+			<meta itemprop="description" content="___meta_description___"/>
+		</div>
+	</div>
+
+
+	___microdataModelProduct___
+
+
+	<div id="askedPageBg" class="bg"></div>
+	
+	<div id="askedPageTitle">
+		<div id="askedPageTitleLabel" class="fl inline">___title___</div>
+		<div id="askedPageTitleLabelAds" class="fl inline">___neuf______sold___</div>
+		<div class="clear"></div>
+	</div>
+	
+	___description_shortStart___
+	<div id="askedPageResume" class="bgWhite colorBlack inline">___description_short___</div>
+	___description_shortStop___	
+	
+
+
+	___chaptersStart___
+	<div id="chaptersContainer" class="clear fl">
+		___chaptersItemStart___
+		<div class="chapter">
+			<div class="bg bgWhite"></div>
+			___chaptersTextStart___
+			<div class="chapterText">
+				<div class="bg bgWhite"></div>
+				<div>
+					<table class="width100pc">
+						<tr><th colspan="5">Description:</th></tr>
+						<tr><td itemprop="description">___chaptersText___</td></tr>
+					</table>
+				</div>
+			</div>
+			___chaptersTextStop___
+			___chaptersSpecsStart___
+			<div class="chaptersSpecs">
+				<div class="bg bgWhite"></div>
+				<div>
+					<table class="width100pc">
+						<tr><th colspan="5">Caractéristiques:</th></tr>
+						___chaptersSpecs___
+					</table>
+				</div>
+			</div>
+			___chaptersSpecsStop___
+			___referencesStart___
+			<div class="chapterReferencesContainer">
+				<div class="bg bgWhite"></div>
+				<div>
+				<table class="caracteristics_allTable width100pc">
+					<tr><th colspan="5">Références:</th></tr>
+					___references_TableStart___
+					<tr><td>___referencesRefNumber___</td><td>:&nbsp;</td><td>___referencesLabel___</td><td>:&nbsp;</td><td>___referencesValue___</td></tr>
+					___references_TableStop___
+				</table>
+				</div>
+			</div>
+			___referencesStop___
+
+			<div class="chapterImgParentContainer">
+				<div class="bg bgWhite"></div>
+				___chaptersImagesStart___
+				<div class="chapterImgContainer fl">
+					<div class="bg"></div>
+					<img class="chaptersImg" alt="___title___" title="___title___" src="___chaptersImagesImage___">
+				</div>
+				___chaptersImagesStop___
+				<div id="clear" class="clear"></div>
+			</div>
+		</div>
+		___chaptersItemStop___
+		<div class="clear"></div>
+	</div>
+	___chaptersStop___
+
+
+	___caracteristics_allStart___
+	<div class="caracteristics_all fl">
+		<div class="bg bgWhite"></div>
+		<div>
+		<table class="caracteristics_allTable width100pc">
+			<tr><th colspan="3">Dimensions:</th></tr>
+			___caracteristics_allTableStart___
+			<tr><td>___caracteristics_allLabel___</td><td>:&nbsp;</td><td>___caracteristics_allValue___</td></tr>
+			___caracteristics_allTableStop___
+		</table>
+		<div id="clear" class="clear"></div>
+		</div>
+	</div>
+	___caracteristics_allStop___
+
+
+
+	___galleryStart___
+	<div id="gallery" class="clear fl">
+		<div class="bg bgWhite"></div>
+		___galleryItemStart___
+		<div class="galleryImgContainer fl">
+			<img	itemprop="image"
+				id="galleryImg___uidForElement___"
+				class="galleryImg"
+				src="___galleryImg___"
+				onclick	="gallery.play( { items:[{nodeIn:'#'+this.id, nodeOut:'#galleryBigDisplaySurface'}, {nodeIn:'#'+this.id, nodeOut:'#displaySurface'}], killPlaylist:true } );"
+				alt="___title___"
+				title="___title___">
+		</div>
+		___galleryItemStop___
+	</div>
+	___galleryStop___
+
+
+	<div id="clear" class="clear"></div>
+</div>
+
+
+
+___galleryStart___
+<div id="galleryBigDisplaySurface" onclick="this.style.display='none';">
+		<div class="bg bgWhite"></div>
+		<img id="poped" src="">
+</div>
+___galleryStop___

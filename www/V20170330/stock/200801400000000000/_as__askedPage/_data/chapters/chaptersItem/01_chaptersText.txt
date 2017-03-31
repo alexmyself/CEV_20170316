@@ -1,0 +1,7 @@
+Connecteur 12-24V
+-femelle
+-1 pôle
+-permet de connecter des câbles de grande section
+-permet le passage d'un courant de grande intensité (Ampères)
+
+Utilisation typique: démarrage de véhicule dont la batterie est vide.

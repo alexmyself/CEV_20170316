@@ -1,0 +1,11 @@
+/*_____________Navigation CSS*/
+.navigationLinkContainer{float:left;}
+#navigation .labelContainer .label:first-letter{font-weight: bold; }
+.navigationRightArrowContainer, .navigationBottomArrowContainer{position: absolute;}
+.navigationBottomArrowImg, .navigationRightArrowImg{
+	width:100%;
+	height:100%;
+}
+
+.navigationLinkContainer:hover > .itemContainer > .backgroundHover{ background-color: white; }
+.navigationLinkContainer:hover > .itemContainer > .imageContainer > .backgroundHover{background: none;}

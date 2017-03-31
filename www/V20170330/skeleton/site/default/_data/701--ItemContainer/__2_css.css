@@ -1,0 +1,32 @@
+/*_____________ItemContainer CSS*/
+.itemContainer{
+	overflow:hidden;
+	float:left;
+}
+.itemContainer div{position: absolute;}
+
+.itemContainer > .background 		{background-color: white;}
+.itemContainer > .backgroundHover 	{background: none;}
+
+
+.labelContainer > .background{background-color: RoyalBlue;}
+.labelContainer > .backgroundHover{background: none;}
+.labelContainer > .label{
+	word-wrap:break-word;
+	color:white;}
+
+.imageContainer > .background{background: none;}
+.imageContainer > .backgroundHover{background: none;}
+
+
+.itemContainer:hover{cursor:pointer;}
+.itemContainer:hover > .background{ background: none; }
+.itemContainer:hover > .backgroundHover{ background-color: black; }
+.itemContainer:hover > .labelContainer > .background{ background: none; }
+.itemContainer:hover > .labelContainer > .backgroundHover{ background-color: Black; }
+.itemContainer:hover > .imageContainer > .backgroundHover{background: white;}
+
+.infoContainer > table{float: right;}
+.infoContainer > table td {text-align: left;  font-family: monospace; color:grey;}
+
+.itemContainer:hover > .infoContainer > table td{color: white;}

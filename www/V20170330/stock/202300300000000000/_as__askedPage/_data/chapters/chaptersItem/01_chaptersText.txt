@@ -1,0 +1,9 @@
+Chape rotule:
+
+-Diam. boule 50mm.
+-Perçage diam.: 17mm, entraxe: 90mm.
+	D = 20kN (broche), 12kN (boule)
+	S = 120kg
+
+D: force de référence théorique pour la force horizontale entre le véhicule tracteur et la remorque.
+S: charge statique verticale, désigne la part de la masse de la remorque à essieu central exercée au point d'attelage dans des conditions statiques.

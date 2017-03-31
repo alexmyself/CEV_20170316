@@ -1,0 +1,1 @@
+orange, LED, 24V / 0.44W

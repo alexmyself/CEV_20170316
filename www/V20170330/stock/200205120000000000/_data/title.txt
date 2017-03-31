@@ -1,0 +1,1 @@
+___manufacturer___ ___model___ ___km___km___priceStart___, ___price___€ht___priceStop___

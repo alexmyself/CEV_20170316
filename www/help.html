@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lt IE 9]>
+		<script src="http://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="http://www.cev-treuil.com/current/skeleton/default/_as__askedPage/_data/favicon.ico?v=1">
+	<meta name="description" content="Aide">
+	<title>Help</title>
+	<!--Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel='stylesheet' href='cev/scripts/bootstrap-3.3.7-dist/css/bootstrap.min.css'
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="cev/scripts/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+		crossorigin="anonymous">
+
+	<style>
+		h1, h2{display: inline;}
+		.border1px{border: solid 1px black;}
+		.borderTop{border-top: solid 1px black;}
+		.borderBottom{border-bottom: solid 1px black;}
+		.borderRight{border-right: solid 1px black;}
+		.borderLeft{border-left: solid 1px black;}
+		.borderRed{border-color: red;}
+		.bgLightBlue{background-color: #f8f8ff;}
+		.fontBold{font-weight: bold;}
+		.fontBlue{color: royalBlue;}
+		.fontRed{color: red;}
+		img{max-width: 100%;}
+		td{vertical-align: top;}
+		.textCenter{text-align: center;}
+		.marginBottom{margin-bottom: 2em;}
+		.marginBottomSmall{margin-bottom: 1em;}
+		.noWrap{white-space: nowrap;}
+	</style>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="scripts/respond.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3"><img src='http://www.cev-treuil.com/current/skeleton/default/_as__askedPage/_data/logo.png'></div>
+			<div class='col-md-9'>
+				<h1><a href='#résumé'>Résumé</a> | </h1>
+				<h1><a href='#logiciels'>Logiciels</a> | </h1>
+				<h1><a href='#sauvegarde'>Sauvegarde &amp; essais</a> | </h1>
+				<h1><a href='#modèles'>Modèles de données</a> | </h1>
+				<h1><a href='#arborescence'>Modèles d'arborescence</a> | </h1>
+				<h1><a href='#aide'>Aide</a> | </h1>
+			</div>
+		</div>
+		<div class="row marginBottom"><div class="col-md-12"><span class='fontRed'>vous _devez_ utiliser des logiciels correctement configurés, oubliez tout ce qui est Microsoft type notepad, word, excel etc. </span></div></div>
+		<div id='résumé' class='row marginBottom'>
+			<div class='col-md-12 borderTop'>
+				<h2>Résumé:</h2>
+				<p>
+					Pour l'exemple ci-dessous on imaginera:
+					<ol><li>créer une nouvelle rubrique avec juste un titre: 'Nos housses de siège' et dont le nom de dossier sera 201720170000000000</li>
+					<li>la faire apparaître parmi le contenu principal de la rubrique 'Equipements pour véhicules' (dont le nom de dossier est 200200000000000000)</li>
+					<li>ajouter une image principale à notre nouvelle rubrique 'Nos housses de sièges'</li>
+					<li>créer un nouvel article avec un titre: 'Housse de siège kéké', une image principale, une description et dont le nom de dossier sera 204020400000000000</li>
+					<li>ajouter cet article dans le contenu principal de notre rubrique 'Nos housses de siège'</li>
+					<li>ajouter cet article dans le contenu secondaire de la rubrique 'Equipements pour véhicules'</li>
+					<li>ajouter cet article dans le contenu pièces détachées de l'article 'PLATEAU FIXE PA 150' (dont le nom de dossier est 200201010000000000)</li>
+
+					</ol>
+					<br>
+					<ol>
+					<h3>Créer un nouvel article ou une nouvelle rubrique:</h3>
+					<p>
+						<li><table id='objetMinimum'>
+						<tr><th colspan="2">Dans le dossier ou sont stockés tout les objets <code>www/V20170208/stock/</code>:</th></tr>
+						<tr><td class='noWrap'>&emsp;<code>201720170000000000</code></td><td>Créer un répertoire dont le nom est 18 chiffres</td></tr>
+						<tr><td class='noWrap'>&emsp;<code>201720170000000000/_data</code></td><td>Créer un répertoire _data</td></tr>
+						<tr><td class='noWrap'>&emsp;<code>201720170000000000/_data/type.txt</code></td><td>Créer un fichier texte nommé 'type.txt' et qui contient soit 'rubrique' soit 'article' selon ce que l'on souhaite créer, ici il contiendra le texte 'rubrique'</td></tr>
+						<tr><td class='noWrap'>&emsp;<code>201720170000000000/_data/title.txt</code></td><td>Créer un fichier texte nommé 'title.txt' et qui contient 'Nos housses de siège'</td></tr>
+						</table>
+						</li>
+						<li>
+						<br>
+						<table>
+						<tr><th colspan="2">Dans le dossier contenant l'arborescence du site <code>www/V20170208/tree/</code>:</th></tr>
+						<tr><td class='noWrap'>&emsp;<code>id__201720170000000000</code></td><td>Créer un répertoire vide dont le nom est 'id__'+les 18 chiffres</td></tr>
+						<tr><td class='noWrap'>&emsp;<code>id__200200000000000000/content/id__201720170000000000</code></td><td>Créer un autre répertoire vide avec le même nom partout ou l'on veut faire apparaître notre rubrique 'Nos housses de siège', ici elle va apparaître dans la rubrique 'équipements pour véhicules' (/id__200200000000000000) et dans son contenu princial (/content).</td></tr>
+						</table>
+						</li>
+						Terminé! :)
+					</p>
+					<br>
+					<h3>Compléter / Modifier un article ou une rubrique</h3>
+					<p>
+						<li>On peut compléter notre nouvel article ou rubrique en ajoutant des fichiers texte et des images dans son dossier dans le stock (<code>www/V20170208/stock/201720170000000000</code>),
+						<br>moyennant de nommer et placer ces fichiers comme indiqué dans les <a href="#modèles">modèles</a>:
+						<br><a href="#modèleArticle">Modèle d'un article</a>
+						<br><a href="#modèleRubrique">Modèle d'une rubrique</a>
+						<br>
+						<br>Par exemple pour ajouter une photo principale il faut mettre une image nommée 'icon.jpeg' dans le dossier '_data' de l'objet:
+						<br><code>www/V20170208/stock/201720170000000000/_data/icon.png</code>
+						<br> (.jpeg, .png, .gif peu importe l'extension, c'est le nom 'icon' et son emplacement qui comptent)
+						</li>
+					</p>
+					<br>
+					<p>
+						<li>
+							Pour créer un nouvel article 'Housse de siège kéké' il faut répéter l'étape 1, aux seules différences que son dossier se nommera '204020400000000000' et qu'il y aura le mot 'article' plutôt que 'rubrique' dans son fichier '_data/type.txt'.
+							<br>Son image principale sera donc a placer ici: <code>www/V20170208/stock/204020400000000000/_data/icon.png</code>.
+							<br>Sa description sera à mettre dans un fichier texte placé et nommé comme suit: <code>www/V20170208/stock/204020400000000000/_as__askedPage/_data/chapters/chaptersItem/01_chaptersText.txt</code>
+						</li>
+					</p>
+						<br>
+						<br>
+					<p>
+						<h3>Ajouter un article ou une rubrique au site</h3>
+						<li>?????????a vérifier...Dans un article il existe deux emplacements possibles pour du contenu:
+						<br>-un emplacement 'principal' qui est le dossier 'content' ()
+						<br>-un emplacement 'également, en rapport' qui est le dossier 'related'
+						 <code>www/V20170208/tree/id__200200000000000000/content/id__201720170000000000</code>
+						<br>
+						<br>Pour faire apparaître notre article 'Housse de siège kéké' dans le contenu principal de la rubrique 'Nos housses de siège' il faut répéter l'étape 2 en utilisant les bons noms de dossiers et en créant ce qui peut manquer (un dossier 'content' dans notre rubrique 'Nos housses de siège') ce qui devrait donner ceci:
+						<br><code>www/V20170208/tree/id__201720170000000000/content/id__204020400000000000</code>
+						</li>
+					</p>
+					<h3></h3>
+						<br>
+						<br>
+
+					</ol>
+
+
+
+
+
+						<br><h4>Pour imager:</h4>
+						<ol>
+							<li>
+								je crée un nouveau dossier: levier_de_vitesse
+								<br>dans lequel je mets des fichiers textes et des images:
+								<br>&emsp;&emsp;levier_de_vitesse/poids.txt
+								<br>&emsp;&emsp;levier_de_vitesse/modèle.txt
+								<br>&emsp;&emsp;levier_de_vitesse/num_série.txt
+								<br>&emsp;&emsp;levier_de_vitesse/image1.jpeg
+								<br>&emsp;&emsp;levier_de_vitesse/image2.jpeg
+							</li>
+							<li>
+								je veut qu'il apparraisse dans les éléments existants 'voiture', 'camion' et 'pièces_détachées',
+								<br>je crée donc des répertoires 'levier_de_vitesse' dans ces éléments existants:
+								<br>&emsp;&emsp;/cev/véhicules/voiture/levier_de_vitesse
+								<br>&emsp;&emsp;/cev/véhicules/grosmachins/camion/levier_de_vitesse
+								<br>&emsp;&emsp;/cev/pièces détachées/levier_de_vitesse
+							</li>
+							<li>..et c'est fini.</li>
+						</ol>
+						<br><h4>Concrêtement:</h4>
+						Tout ce qui est crée doit respecter des conventions de nommage,
+						<br>techniquement il n'est pas question de créer un dossier 'levier_de_vitesse' et pas plus de trouver un dossier 'camion' quelque part.
+						<ol>
+							<li>Créer un nouveau répertoire dans le dossier: <code>www/V20170208/stock/</code> contenant les textes et images du nouvel élément:
+								<ul><li>Le nom de ce répertoire sera 18 chiffres et rien d'autre, ex.: <code>201720170000000000</code>.
+										<br>(c'est censé pouvoir représenter: 2017année 03mois 29jour 10heures 17minutes 59secondes 1999millisecondes, mais ce n'est pas obligatoire, il faut simplement 18 chiffres)</li>
+									<li>Le nom de tout ce qui peut exister dans ce nouvel élément est également fixé.
+										<br>(on trouverai le titre 'Levier de vitesse' dans le fichier: <code>201720170000000000/_data/title.txt</code>)</li>
+								</ul>
+							</li>
+							<li>Créer un répertoire 'id__'+nom du nouvel élément(ex.: id__201720170000000000) dans le dossier: <code>www/V20170208/tree/</code></li>
+							<li>Créer un ou plusieurs répertoires du même nom dans ceux existants dans le dossier: <code>www/V20170208/tree/</code></li>
+						</ol>
+						<br>Pour créer notre article 'levier de vitesse' et le faire apparaître dans le contenu principal de la rubrique 'équipements pour véhicules' il suffirait donc de créer ce qui suit:
+						<table id='objetMinimum'>
+						<tr><th>Dans le stock (www/V20170208/stock/):</th></tr>
+						<tr><td class='noWrap'>&emsp;<code>www/V20170208/stock/201720170000000000</code></td><td>Un répertoire dont le nom est 18 chiffres</td></tr>
+						<tr><td class='noWrap'>&emsp;<code>www/V20170208/stock/201720170000000000/_data</code></td><td>Un répertoire _data</td></tr>
+						<tr><td class='noWrap'>&emsp;<code>www/V20170208/stock/201720170000000000/_data/type.txt</code></td><td>Un fichier texte nommé 'type.txt' et qui contient soit 'rubrique' soit 'article' selon ce que l'on souhaite créer, ici il contiendra le texte 'article'</td></tr>
+						<tr><td class='noWrap'>&emsp;<code>www/V20170208/stock/201720170000000000/_data/title.txt</code></td><td>Un fichier texte nommé 'title.txt' et qui contient 'Levier de vitesse'</td></tr>
+						<tr><td>&nbsp;</td></tr>
+						<tr><th>Dans l'arborescence (www/V20170208/tree/):</th></tr>
+						<tr><td class='noWrap'>&emsp;<code>www/V20170208/tree/id__201720170000000000</code></td><td>Un répertoire vide dont le nom est 'id__'+les 18 chiffres</td></tr>
+						<tr><td class='noWrap'>&emsp;<code>www/V20170208/tree/id__200200000000000000/content/id__201720170000000000</code></td><td>Un autre répertoire vide avec le même nom partout ou l'on veut faire apparaître notre levier de vitesse, ici il va apparaître dans la rubrique 'équipements pour véhicules' (/id__200200000000000000) et dans le contenu princial (/content) de cette rubrique</td></tr>
+						</table>
+					</p>
+				</p>
+			</div>
+		</div>
+		<div id='logiciels' class='row borderTop marginBottom'>
+			<div class='col-md-12'>
+				<h2 class='noWrap'>Logiciels:</h2>
+				<p>Il faut deux logiciels particuliers, un éditeur de texte et un client ftp, deux gratuits et reconnus ci-dessous:
+				<br>Editeur de texte: <a href='https://www.sublimetext.com/'>Sublime text</a>
+				<br>Client ftp:<a href='https://winscp.net/eng/docs/lang:fr'>WinSCP</a>
+				<br>Eventuellement un logiciel de retouche d'images: <a href='https://www.gimp.org/'>Gimp</a>
+				<br>
+				<h3>Editeur de texte</h3>
+				Il faut veiller à ce que les fichiers texte crées soit encodés au format utf-8.
+				<br>Sous sublime text: menu 'file' puis 'reopen with encoding' ou 'save with encoding' -->UTF-8.
+				<br>Désormais ce fichier est utf-8, il n'est pas nécessaire de refaire la manipulation, du moins avec sublime text, car d'autre logiciels n'hésiteront pas à changer cet encodage sans vous prévenir.
+				<br>Tous nos fichiers texte porteront l'extension '.txt', si vous ne voyez pas les extensions de fichiers dans windows il faut trouver:
+				<br>'options des dossiers'-->'affichage'--> décocher: 'Masquer les extensions de fichiers dont le type est connu'.
+				<h3>Client ftp</h3>
+				En bref:
+				<br>Ce type de logiciel sert à faire des copier/coller entre deux ordinateurs.
+				<br>Ils se présentent quasiment tous de la même manière:
+				<br>Un volet d'explorateur sur la moitié gauche (notre ordinateur).
+				<br>Un volet d'explorateur sur la moitié droite (le serveur).
+				<br>Un clic pour sélectionner un fichier ou un dossier.
+				<br>F5 pour l'envoyer vers l'autre volet.
+				<br>
+				<br>Il faut paramétrer les coordonnées de l'ordinateur auquel l'on souhaite se connecter, soit le serveur cev dans notre cas:
+				<br>Nom d'hôte/ adresse du serveur:<code>ftp.cluster002.ovh.net</code>
+				<br>Nom d'utilisateur:<code>cevtreui</code>
+				<br>Mot de passe: <code>cev1946</code>
+				<br>Si demandé/besoin:
+				<br>Protocol:<code>SFTP</code> port: <code>22</code>
+				<br>ou <code>FTP</code> port: <code>21</code>
+				<br>
+				<br>Bon à savoir:
+				<br>Le dossier deux points '..', en haut de chaque volet, permet de remonter vers le dossier parent.
+				<br>Le 'bureau' de windows n'est qu'un dossier et n'existe pas, c'est un artifice de windows, son vrai nom est 'Desktop' et il est quelque part par là: <code>C:\Users\ACHATS\Desktop</code>
+				</p>
+			</div>
+		</div>
+		<div id='sauvegarde' class='row borderTop marginBottom'>
+			<div class='col-md-12'>
+				<h2 class='noWrap'>Sauvegarde:</h2>
+				<p>Il suffit d'utiliser le client FTP:
+				<h4>Faire une sauvegarde:</h4>
+				dans le volet de droite (le serveur), cliquer sur le dossier parent ('..') jusqu'à voir le dossier 'www' et '.ovhconfig', sauvegardez les sur votre ordinateur.
+				<h4>Utiliser une sauvegarde:</h4>
+				dans le volet de gauche (votre ordinateur), trouvez votre sauvegarde, dans le volet de droite (le serveur) trouvez 'www' et '.ovhconfig' et supprimez les, une fois supprimés envoyez les 'www' et '.ovhconfig' de votre ordinateur vers le serveur.
+				<br>
+				<br>Cette procédure prend en compte tout ce qui existe, nous n'utilisons pas de base de données ou autre,
+				<br>ce qui fait que ce simple copier/coller via ftp est suffisant pour tout sauvegarder et/ou tout remettre en place.
+				</p>
+				<h3>Essais:</h3>
+				<p>Il n'est pas possible de voir le résultat d'une modification sur votre ordinateur, il faut envoyer les modifications sur le serveur.
+				<br>Il existe à cet effet un répertoire spécifique sur le serveur:
+				<br>vous pouvez le voir ici: <a href='http://www.cev-treuil.com/next/'>http://www.cev-treuil.com/next</a>,
+				<br>et y accéder ici: <code>/www/V20170330/</code>
+				<br>Une fois les modifications ajustées/terminées il faut les appliquer au "vrai" site:
+				<br>que tout le monde voit ici: <a href='http://www.cev-treuil.com/current/'>http://www.cev-treuil.com/current</a>,
+				<br>et y accéder ici: <code>/www/V20170208/</code>
+				<br>
+				<br>Il est possible de modifier les noms des dossiers sur lesquels pointent les adresses /current et /next, dans le fichier:
+				<br><code>www/.htaccess</code>
+				<br>pour current: <code>RewriteRule ^ - [E=currentDir:V20170208]</code>
+				<br>pour next: <code>RewriteRule ^ - [E=nextDir:V20170330]</code>
+				<br>Ce fichier .htaccess est une pourriture sans nom, son language et son fonctionnement sont tout à fait imbitables et ne pardonnent rien, faites-en toujours une sauvegarde avant de le modifier.
+				</p>
+			</div>
+		</div>
+		<div id='modèles' class='row borderTop marginBottom'>
+			<div class='col-md-12'>
+				<h2 class='noWrap'>Modèles pour les données:</h2>
+				<p>Le minimum pour qu'un objet s'affiche sur le site est ce qui apparaît <a href='#objetMinimum'>ci-dessus</a> dans l'exemple du 'Levier de vitesse'.
+				<br>Au-delà de ce minimum il est possible de compléter un objet en ajoutant d'autres fichiers/dossiers prédéfinis.
+				<br>
+				<br>Pour info et pour éviter certains maux de tête, dans les deux types d'objets (rubrique et article) il existe deux répertoires principaux:
+				<br>&emsp;_data
+				<br>&emsp;_as__askedPage
+				<br>Les données contenues dans le premier sont utilisées systématiquement lorsque l'on affiche l'objet (ex.: '/cev/véhicules/voiture' (dans laquelle figure notre levier de vitesse))
+				<br>Les données contenues dans le second sont utilisées uniquement quand cet objet est l'objet principal a afficher (ex.: '/cev/véhicules/voiture/levier_de_vitesse').
+				<br>
+				<br>Ci-dessous les arborescences complètes possibles des deux types d'objets utilisables:
+				<table>
+					<tr><th colspan='2'>Rubrique:</th></tr>
+					<tr><td>_data/&emsp;</td><td>type.txt</td></tr>
+					<tr><td></td><td>title.txt</td></tr>
+					<tr><td></td><td>icon.jpeg</td></tr>
+				</table>
+				<table>
+					<tr><td>_as__askedPage/&emsp;</td><td>_data/&emsp;</td><td>description_short.txt</td></tr>
+					<tr><td></td><td></td><td>meta_description.txt</td></tr>
+					<tr><td></td><td></td><td>meta_title.txt</td></tr>
+					<tr><td></td><td></td><td>keywords/&emsp;</td><td>domains/&emsp;</td><td>__arrachage.txt</td></tr>
+					<tr><td></td><td></td><td></td><td></td><td>__depannage.txt</td></tr>
+					<tr><td></td><td></td><td></td><td></td><td>...N</td></tr>
+					<tr><td></td><td></td><td></td><td>synonymous/&emsp;</td><td>__bras-de-depannage.txt</td></tr>
+					<tr><td></td><td></td><td></td><td></td><td>__camion.txt</td></tr>
+					<tr><td></td><td></td><td></td><td></td><td>__depanneuse.txt</td></tr>
+					<tr><td></td><td></td><td></td><td></td><td>...N</td></tr>
+				</table>
+				</p>
+			</div>
+		</div>
+		<div id='arborescence' class='row borderTop marginBottom'>
+			<div class='col-md-12'>
+				<h2 class='noWrap'>Modèles pour l'arborescence:</h2>
+				<p>Le minimum pour qu'un objet s'affiche sur le site est ce qui apparaît <a href='#objetMinimum'>ci-dessus</a> dans l'exemple du 'Levier de vitesse'.
+				<br>
+				<br>
+				</p>
+			</div>
+		</div>
+ 
+	</div>
+	
+
+</body>
+</html>

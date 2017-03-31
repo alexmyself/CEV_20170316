@@ -16,6 +16,10 @@ Options +FollowSymlinks
 #/Doc
 
 
+Header set Cache-Control "max-age=86400, public"
+Header set Expires "access plus 86400 seconds"
+
+
 #Redirect some existing google result links.
 RewriteCond %{ENV:REDIRECT_STATUS} ^[\s/]*$
 RewriteCond %{REQUEST_URI} ^/V
@@ -37,12 +41,12 @@ RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 ##############################################################
 	#Current dir
-RewriteRule ^ - [E=currentDir:V20161228]
+RewriteRule ^ - [E=currentDir:V20170208]
 	#Set url if /current(/) is asked and if there has been no previous internal redirection
 RewriteCond %{REQUEST_URI} ^/current.?$
 RewriteRule ^ /current/Index.php\?%{QUERY_STRING} [L,R]
 
-	#Set path for next url ressources
+	#Set path for current url ressources
 RewriteCond %{REQUEST_URI} ^/current/.+\....?
 RewriteRule current(.*) %{ENV:currentDir}$1 [L]
 ##############################################################
@@ -50,7 +54,7 @@ RewriteRule current(.*) %{ENV:currentDir}$1 [L]
 
 ##############################################################
 	#Next dir
-RewriteRule ^ - [E=nextDir:V20170208]
+RewriteRule ^ - [E=nextDir:V20170330]
 	#Set url if /next(/) is asked and if there has been no previous internal redirection
 RewriteCond %{REQUEST_URI} ^/next.?$
 RewriteRule ^ /next/Index.php\?%{QUERY_STRING} [L,R]
@@ -66,6 +70,7 @@ RewriteCond %{REQUEST_URI} !^/cev/
 RewriteCond %{REQUEST_URI} !^/cevam/
 RewriteCond %{REQUEST_URI} !^/current/
 RewriteCond %{REQUEST_URI} !^/next/
+RewriteCond %{REQUEST_URI} !^/robots\.txt
 RewriteRule ^.*$ /current/	[L,R=301]
 
 	#Redirect cev index to current index

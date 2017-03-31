@@ -1,0 +1,9 @@
+<a href="http://cev-treuil.com/cev/actualite.htm"
+	hreflang='fr'>
+	Promotions
+</a>
+ | 
+ <a href="http://www.cev-treuil.com/current/Index.php?path=/id__200100000000000000/content/id__999000000000000001&software=default&display=default" 
+ 	hreflang='fr'>
+ 	Société
+ </a>
