@@ -1,3 +1,0 @@
-Adaptateur 12v:
--se place sur remorque ou véhicule équippé en 7 pôles.
--permet d'y connecter un cordon 13 pôles.

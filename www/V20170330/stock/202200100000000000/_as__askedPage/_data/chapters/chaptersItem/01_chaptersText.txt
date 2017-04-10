@@ -1,5 +1,0 @@
-Chariot pour le remorquage des voitures dont les roues sont bloquées.
-Roues fixes.
-Livré avec:
-	-levier de soulèvement
-	-sangle (réf 7215) avec tendeur pour arrimage de la roue du véhicule dans le chariot.

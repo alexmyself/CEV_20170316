@@ -1,9 +1,0 @@
-Crochet boule:
-
--Diam. boule 50 mm.
--Perçage diam.: 17mm, entraxe: 90mm.
-	D = 31 kN
-	S = 375 kg
-
-D: force de référence théorique pour la force horizontale entre le véhicule tracteur et la remorque.
-S: charge statique verticale, désigne la part de la masse de la remorque à essieu central exercée au point d'attelage dans des conditions statiques.

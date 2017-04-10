@@ -1,2 +1,0 @@
-Système de rétrovision vidéo permettant de sécuriser les marches arrière
-par le biais d’un écran installé dans la cabine et relié à une caméra fixée à l’arrière du véhicule 

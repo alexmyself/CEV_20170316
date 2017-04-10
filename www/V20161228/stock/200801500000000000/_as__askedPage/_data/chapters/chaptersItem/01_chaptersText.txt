@@ -1,9 +1,0 @@
-Connecteur 12-24V
--femelle ou mâle indifférement
--2 pôles
--permet de connecter des câbles de grande section
--permet le passage d'un courant de grande intensité (Ampères)
-
-Utilisation typique:
--démarrage de véhicule dont la batterie est vide.
--recharge de batteries de chariot élévateur.

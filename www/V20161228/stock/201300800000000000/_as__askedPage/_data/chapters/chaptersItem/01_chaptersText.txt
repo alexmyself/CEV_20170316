@@ -1,3 +1,0 @@
-Interruteur à voyant intensité 15 A.
-Existe en version 12 ou 24 volt courant continu.
-La pose se fait dans un perçage de diamètre 10 et la fixation par un écrou central.

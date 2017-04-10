@@ -1,1 +1,0 @@
-A bouton tournant, 2 positions + rappel au centre.

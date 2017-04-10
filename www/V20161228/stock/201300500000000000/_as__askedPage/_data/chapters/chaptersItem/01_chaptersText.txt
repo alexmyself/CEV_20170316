@@ -1,1 +1,0 @@
-Boitier d'interrupteurs avec led de fonctionnement (couleur verte).

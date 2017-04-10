@@ -1,3 +1,0 @@
-Bouton tournant :
-à gauche et à droite, avec rappel au centre.
-Diamètre 22 mm

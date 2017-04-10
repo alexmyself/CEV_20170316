@@ -1,2 +1,0 @@
-Micro contacteur faible intensité 5A,
-utilisé pour la mise en fonction de caméra de recule sur dépanneuse ou autres accessoires.

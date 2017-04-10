@@ -1,9 +1,0 @@
-Largeur hors tout	: 2080 mm.
-<br>Largeur utile		: 1980 mm
-<br>Longueur			: suivant empattement du véhicule
-<br>Plancher en acier galvanisé épaisseur 2,5 mm antidérapant.
-<br>Largeur des éléments de Plancher 	: 240 mm
-<br>Charge technique admissible			: 2500 kg
-<br>Rampes acier (ou aluminium en option) rentrantes sous le plateau dans des tiroirs.
-<br>Roll-bar de protection de cabine avec butoirs caoutchouc.
-<br>Treuil électrique force 3500 kg avec commande à distance filaire (ou commande radio en option).
